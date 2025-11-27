@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "./pages/HomePage/HomePageSection/Head";
+import Head from "./pages/HomePage/HomePage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from "./component/NavBar";
 import GetTouch from "./component/GetTouch";
@@ -10,7 +10,7 @@ const App = () => {
     <div className="">
       <BrowserRouter>
         <NavBar />
-        <Routes>
+        <Routes> 
           <Route path="/" element={<Head />} />
           <Route path="/gettouch" element={<GetTouch />} />
         </Routes>
