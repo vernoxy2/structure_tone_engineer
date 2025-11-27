@@ -49,7 +49,7 @@ import img2 from "../../../assets/HomePageImgs/WhatWeDo/img2.svg";
 import img3 from "../../../assets/HomePageImgs/WhatWeDo/img3.svg";
 import img4 from "../../../assets/HomePageImgs/WhatWeDo/img4.svg";
 import img5 from "../../../assets/HomePageImgs/WhatWeDo/img5.svg";
-import BaseLine from "../../../component/Baseline";
+// import BaseLine from "../../../component/Baseline";
 
 
 const cardData = [
