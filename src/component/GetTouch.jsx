@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Header from '../../../blindschool/src/component/Header'
 
 const GetTouch = ({className = '', className2 = ``}) => {
   return (
