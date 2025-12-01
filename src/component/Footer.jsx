@@ -8,7 +8,7 @@ import { CiLocationOn, CiMail } from "react-icons/ci";
 import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import { TiSocialInstagram } from "react-icons/ti";
 import { RiTwitterXFill } from "react-icons/ri";
-import BaseLine from "./Baseline";
+import BaseLine from "../component/BaseLine";
 
 const LinksData = [
   { id: 1, name: "Home", Link: "/" },
