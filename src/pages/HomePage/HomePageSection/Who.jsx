@@ -1,5 +1,5 @@
 import React from "react";
-import aboutUs from "../../../assets/HomePageImgs/AboutUs.png";
+import aboutUs from "../../../assets/HomePageImgs/aboutUs.png";
 import svg1 from "../../../assets/HomePageImgs/svg1.svg";
 import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 import BaseLine from "../../../component/BaseLine";
