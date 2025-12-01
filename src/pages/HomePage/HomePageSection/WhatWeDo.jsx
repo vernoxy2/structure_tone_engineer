@@ -1,39 +1,3 @@
-// import React from "react";
-// import WhatWeDoImg from "../../../assets/HomePageImgs/WhatWeDo/bg_img.png";
-// import svg1 from "../../../assets/HomePageImgs/svg1.svg";
-// import svg2 from "../../../assets/HomePageImgs/svg2.svg";
-// import PrimaryBtn from "../../../component/PrimaryBtn";
-
-// const cardData=[
-// {id:1,img:"svg1",title:"Structural Design and Analysis",subText:"Innovative structural designs supported by precise analytical methods."},
-// {id:2,img:"",title:"Industrial, Commercialand Residential Building Design",subText:"Versatile design expertise delivering smart solutions across all building sectors." },
-// ]
-
-// const WhatWeDo = () => {
-//   return (
-//     <section className="bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${WhatWeDoImg})` }}>
-//       <div className="container grid grid-col-1 lg:grid-cols-3 md:grid-cols-2">
-//         <div className="">
-//           <h2 className="uppercase flex gap-2">
-//             <img src={svg1} alt="aboutUs" />
-//            What We do
-//             <img src={svg2} alt="aboutUs" />
-//           </h2>
-//           <h1 className="text-primary text-start text-5xl mt-5 ">
-//             Our Services that we provide
-//           </h1>
-//           <p className="mt-2">
-//             Delivering clean, user-focused digital experiences backed by seven years’ expertise.
-//           </p>
-//           <PrimaryBtn className="mt-7">Know More Services</PrimaryBtn>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default WhatWeDo;
-
 import React from "react";
 import WhatWeDoImg from "../../../assets/HomePageImgs/WhatWeDo/bg_img.png";
 import card1 from "../../../assets/HomePageImgs/WhatWeDo/card1.svg";
@@ -49,8 +13,7 @@ import img2 from "../../../assets/HomePageImgs/WhatWeDo/img2.svg";
 import img3 from "../../../assets/HomePageImgs/WhatWeDo/img3.svg";
 import img4 from "../../../assets/HomePageImgs/WhatWeDo/img4.svg";
 import img5 from "../../../assets/HomePageImgs/WhatWeDo/img5.svg";
-// import BaseLine from "../../../component/Baseline";
-
+import BaseLine from "../../../component/BaseLine";
 
 const cardData = [
   {
@@ -65,8 +28,7 @@ const cardData = [
     id: 2,
     img: card2,
     image: img2,
-    title:
-      "Industrial, Commercial and Residential Building Design",
+    title: "Industrial, Commercial and Residential Building Design",
     subText:
       "Versatile design expertise delivering smart solutions across all building sectors.",
   },
@@ -103,7 +65,6 @@ const WhatWeDo = () => {
       style={{ backgroundImage: `url(${WhatWeDoImg})` }}
     >
       <div className="container grid grid-col-1 lg:grid-cols-3 md:grid-cols-2 gap-10 py-10">
-        
         {/* LEFT SECTION */}
         <div>
           <h2 className="uppercase flex gap-2 items-center text-bold">
@@ -124,27 +85,25 @@ const WhatWeDo = () => {
           <PrimaryBtn className="mt-7">Know More Services</PrimaryBtn>
         </div>
 
-          {cardData.map((card) => (
-            <div
-              key={card.id}
-              className="p-7 bg-white rounded-lg shadow-md"
-            >
-              <img src={card.img} alt={card.title} className="w-20 h-20 mb-4 " />
-              {/* <BaseLine /> */}
-                <div className="flex flex-row">
-                <img src={card.image} alt={card.title} className="w-14 h-7 mb-4  " />
-              <h3 className="text-xl font-bold text-primary ms-3 ">
-                {card.title}
-              <p className="text-base mt-3 text-[#162C3E] font-normal">
-                {card.subText}  
-              </p>
-              </h3>
-                </div>
+        {cardData.map((card) => (
+          <div key={card.id} className="p-7 bg-white rounded-lg shadow-md">
+            <div className="flex items-center justify-between ">
+              <img src={card.img} alt={card.title} className="w-20 h-20 mb-4 ms-14 " />
+              <BaseLine className="bg-[#DEDEDE]"/> 
             </div>
-          ))}
-        </div>
+            <div className="flex flex-row mt-4">
+              <img src={card.image} alt={card.title} className="w-12 h-14" />
 
-      {/* </div> */}
+              <div className="ms-3 ">
+                <h3 className="text-2xl font-bold text-primary ">{card.title}</h3>
+                <p className="text-base mt-4 text-[#162C3E] font-normal">
+                  {card.subText}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
