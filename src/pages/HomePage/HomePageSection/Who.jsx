@@ -4,8 +4,6 @@ import svg1 from "../../../assets/HomePageImgs/svg1.svg";
 import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 import BaseLine from "../../../component/BaseLine";
 import PrimaryBtn from "../../../component/PrimaryBtn";
-import { GoArrowUpRight } from "react-icons/go";
-
 
 const Who = () => {
   return (
