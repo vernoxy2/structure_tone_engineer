@@ -3,7 +3,8 @@ import HeadSection from './ContactUsSection/HeadSection';
 import HeadImg from "../../assets/ContactUsImgs/HeadImg.webp";
 import Head2 from "../../assets/ContactUsImgs/Head2.webp";
 import Head3 from "../../assets/ContactUsImgs/Head3.webp";
-import ContactUsWith from "../ContactUs/ContactUsSection/ContactUsWith"
+import ContactUsWith from "../ContactUs/ContactUsSection/ContactUsWith";
+import Location from './ContactUsSection/Location';
 
 
 const ContactUs = () => {
@@ -40,6 +41,7 @@ const ContactUs = () => {
     <div>
       <HeadSection slides={slides} />
       <ContactUsWith />
+      <Location />
     </div>
   )
 }

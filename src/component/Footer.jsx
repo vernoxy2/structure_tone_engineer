@@ -2,7 +2,6 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import footerBgImg from "../assets/HomePageImgs/footerBgImg.png";
 import footerLogo from "../assets/HomePageImgs/footerLogo.svg";
-import { MdEmail, MdPhone } from "react-icons/md";
 import { MdOutlinePhone } from "react-icons/md";
 import { CiLocationOn, CiMail } from "react-icons/ci";
 import { FaFacebookF, FaWhatsapp } from "react-icons/fa";
@@ -27,7 +26,7 @@ const contactInfo = [
   {
     title: "Location",
     icon: <CiLocationOn className="text-5xl p-1 text-primary" />,
-    details: "112/ La Victoria Galaxy CirclePal, Surat 394510",
+    details: "112/ La Victoria Galaxy Circle Pal, Surat 394510",
   },
   {
     title: "Call Us",
@@ -53,9 +52,9 @@ const Footer = () => {
   return (
     <section
       style={{ backgroundImage: `url(${footerBgImg})` }}
-      className="bg-black text-white py-10 pb-10 relative bg-cover bg-no-repeat bg-center border"
+      className="bg-black text-white py-10 pb-10 relative bg-cover bg-no-repeat bg-center "
     >
-      <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 border">
+      <div className="container grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-8 ">
         {/* First Column */}
         <div className="text-start">
           <img
@@ -67,11 +66,11 @@ const Footer = () => {
             <strong className="text-primary">Structuretone</strong> provides modern urban development solutions, blending
             aesthetics, functionality, and sustainability.
           </p>
-          <BaseLine className="mt-3 w-1/3" />
+          <BaseLine className="mt-3 w-2/6 p-[0.5] " />
         </div>
 
         {/* Second Column */}
-        <div className="text-start flex flex-col items-center w-full border ">
+        <div className="text-start lg:ms-11 space-y-5">
           <h1 className="font-extrabold text-3xl mb-2 pb-1 w-fit">
             Quick Links
           </h1>
@@ -92,8 +91,8 @@ const Footer = () => {
         </div>
 
         {/* Third Column */}
-        <div className="text-start">
-          <h1 className="font-extrabold text-3xl mb-2  pb-1 w-fit">
+        <div className="text-start space-y-5">
+          <h1 className="font-extrabold text-3xl mb-2 pb-1 w-fit">
             Project Pages
           </h1>
           <BaseLine className="mb-4 bg-gradient-to-r from-primary to-black/80 "/>
@@ -107,23 +106,24 @@ const Footer = () => {
             ))}
           </ul>
         </div>
+
         {/* Fourth Column */}
-        <div className="md:col-span-2 xl:col-span-1">
+        <div className=" space-y-5">
           <h1 className="font-extrabold text-3xl mb-2 pb-1 w-fit text-primary">
             Contact Us
           </h1>
           <BaseLine className="mb-4 bg-gradient-to-r from-primary to-black/80 "/>
 
           {contactInfo.map((info, index) => (
-            <div className="flex gap-3 mt-4" key={index}>
-              <div className="h-12 w-12 bg-white text-primary rounded-md flex justify-center items-center">
+            <div className="flex gap-3" key={index}>
+              <div className="h-12 w-12 bg-white text-primary rounded-md flex justify-center items-center ">
                 {info.icon}
               </div>
               <div>
-                <h2 className="font-bold text-[20px] text-primary">
+                <h2 className="font-bold text-[20px] text-primary ms-2">
                   {info.title}
                 </h2>
-                <p className={`text-sm ${info.underline ? "underline" : ""}`}>
+                <p className={`text-sm ms-2 ${info.underline ? "underline" : ""}`}>
                   {info.details.split("\n").map((line, i) => (
                     <span key={i}>
                       {line}
@@ -138,13 +138,11 @@ const Footer = () => {
       </div>
 
       {/* SOCIAL BAR INSIDE FOOTER (CENTER BOTTOM) */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-[450px]">
-        <div className="relative">
+      <div className="">
           {/* Icons */}
-          <div className="p-4 ">
+          <div className="p-4">
             <div
-              className="flex gap-5 justify-center absolute w-full -top-6 left-1/2 
-                       -translate-x-1/2 px-4 py-2 rounded-lg "
+              className=" flex gap-5 items-center justify-center"
             >
               {Soical.map((item) => (
                 <Link
@@ -157,9 +155,8 @@ const Footer = () => {
               ))}
             </div>
           </div>
-        </div>
         {/* Divider */}
-        <div className="bg-gradient-to-r from-white/20 via-white to-white/20 h-[3px] w-full mb-2 mt-4" />
+        <div className="bg-gradient-to-r from-white/20 via-white to-white/20 h-[1px]  mb-2 mt-5 mx-auto max-w-2xl " />
       </div>
     </section>
   );
