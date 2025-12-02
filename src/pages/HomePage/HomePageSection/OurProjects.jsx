@@ -27,7 +27,7 @@ const OurProjects = () => {
   return (
     <section className="container">
       <div className="">
-        <h2 className="uppercase flex gap-2 items-center text-bold justify-center ">
+        <h2 className="uppercase flex gap-2 items-center font-bold text-xl justify-center ">
           <img src={svg1} alt="icon" className="item-center" />
           Our Project
           <img src={svg2} alt="icon" />
@@ -37,18 +37,18 @@ const OurProjects = () => {
 
       <div
         style={{ backgroundImage: `url(${ProjectImg})` }}
-        className="bg-cover bg-no-repeat mt-12 lg:h-[500px] "
+        className="bg-cover bg-bottom-left bg-no-repeat mt-12 lg:h-[500px] "
       >
-        <div className="lg:h-full w-full grid grid-cols-3 border ">
+        <div className="lg:h-full w-full grid grid-cols-1 md:grid-cols-3 border ">
           {projectItems.map((item, index) => (
-            <div key={index} className="relative overflow-hidden border ">
+            <div key={index} className="relative overflow-hidden border group ">
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-full object-cover opacity-0 hover:opacity-100 duration-300 transition-opacity"
+                className="w-full h-full object-cover opacity-0 group-hover:opacity-100 duration-300 transition-opacity"
               />
-              <div className="absolute top-0 right-1 text-white flex items-right gap-2">
-                <img src={item.arrow} alt="arrow" className="w-44 h-44" />
+              <div className="absolute top-0 right-1 text-white flex items-right gap-2  group-hover:opacity-100">
+                <img src={item.arrow} alt="arrow" className="w-44 h-44 " />
               </div>
             </div>
           ))}

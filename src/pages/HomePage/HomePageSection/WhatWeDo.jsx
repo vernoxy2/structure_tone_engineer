@@ -67,7 +67,7 @@ const WhatWeDo = () => {
       <div className="container grid grid-col-1 lg:grid-cols-3 md:grid-cols-2 gap-10 py-10">
         {/* LEFT SECTION */}
         <div>
-          <h2 className="uppercase flex gap-2 items-center text-bold">
+          <h2 className="uppercase flex gap-2 items-center text-xl font-bold">
             <img src={svg1} alt="icon" />
             What We Do
             <img src={svg2} alt="icon" />

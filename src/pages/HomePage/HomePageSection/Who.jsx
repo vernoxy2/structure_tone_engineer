@@ -15,7 +15,7 @@ const Who = () => {
         </div>
         {/* col-2 */}
         <div className="space-y-10 md:w-11/12 xl:w-5/6 ml-auto">
-          <h2 className="uppercase text-bold flex gap-2">
+          <h2 className="uppercase font-bold text-xl flex gap-2">
             <img src={svg1} alt="aboutUs" />
             About us
             <img src={svg2} alt="aboutUs" />
