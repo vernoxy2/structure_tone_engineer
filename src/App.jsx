@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/gettouch" element={<GetTouch />} />
           <Route path="/services" element={<ServicePage />} />
         </Routes>
-        <Footer />   {/* ✔ Now inside Router */}
+        <Footer />   
       </BrowserRouter>
     </div>
   );

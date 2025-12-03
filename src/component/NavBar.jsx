@@ -4,6 +4,7 @@ import GetTouch from "./GetTouch";
 import { HiMenu, HiX } from "react-icons/hi";
 import navLogo from "../assets/HomePageImgs/logo.svg";
 
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuItems = [
@@ -11,14 +12,18 @@ const NavBar = () => {
     { name: "Aboutus", path: "/aboutus" },
     { name: "Project", path: "/project" },
     { name: "Services", path: "/services" },
-    { name: "Contact", path: "/contact" }, 
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
     <nav className="bg-white shadow-md w-full py-4 flex items-center fixed top-0 left-0 z-50">
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
-        <img src={navLogo} alt="navLogo" className="h-12 md:h-20" />
+        <NavLink to="/">
+          <img src={navLogo} alt="navLogo" className="h-12 md:h-20" />
+        </NavLink>
+
+        {/* <img src={navLogo} alt="navLogo" className="h-12 md:h-20" /> */}
         {/* Desktop Menu */}
         <ul className="hidden lg:flex gap-4 xl:gap-5">
           {menuItems.map((item) => (
