@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import svg1 from "../../../assets/HomePageImgs/svg1.svg";
 import svg2 from "../../../assets/HomePageImgs/svg2.svg";
-import img1 from "../../../assets/ServicePageImgs/img1.webp";
-import img2 from "../../../assets/ServicePageImgs/img2.webp";
-import img3 from "../../../assets/ServicePageImgs/img3.webp";
+import img1 from "../../../assets/ServicePageImgs/Img1.webp";
+import img2 from "../../../assets/ServicePageImgs/Img2.webp";
+import img3 from "../../../assets/ServicePageImgs/Img3.webp";
 import Svg from "../../../assets/ServicePageImgs/Svg.svg";
 import Broucher from "../../../assets/ServicePageImgs/Broucher.svg";
 import Doc from "../../../assets/ServicePageImgs/Doc.svg";

@@ -183,20 +183,21 @@ const ContactUsWith = () => {
             </PrimaryBtn>
           </div>
         </form>
-
         <div className="space-y-6 w-full">
           {infoBoxes.map((box) => (
             <div
               key={box.id}
-              className="relative border shadow p-5 rounded-sm bg-white flex flex-col md:flex-row md:items-center gap-4 "
+              className="relative border shadow p-5 rounded-sm bg-white flex flex-col md:flex-row md:items-center gap-4"
             >
-              <div className="text-4xl text-primary bg-[#F8F8F8] border-primary p-3 rounded-full w-fit border-r-2 ">
-                {box.icon}
+              <div className="flex flex-row items-center gap-4">
+                <div className="text-4xl text-primary bg-[#F8F8F8] border-primary p-3 rounded-full w-fit border-r-2">
+                  {box.icon}
+                </div>
+                <p className="font-bold text-2xl text-primary">{box.title}</p>
               </div>
-              <div className="">
-                <p className="font-bold text-2xl text-primary ">{box.title}</p>
-                <p className="mt-2 text-[#162C3E] text-sm md:text-base lg:text-base">{box.text}</p>
-              </div>
+              <p className="mt-2 text-[#162C3E] text-sm md:text-base lg:text-base ">
+                {box.text}
+              </p>
               <img
                 src={SvgCross}
                 className="w-6 h-6 absolute right-0 bottom-0"
