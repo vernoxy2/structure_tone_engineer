@@ -4,7 +4,8 @@ import { MdOutlinePhone } from "react-icons/md";
 import { CiLocationOn, CiMail } from "react-icons/ci";
 import BgImg from "../../../assets/ContactUsImgs/BgImg.png";
 import SvgCross from "../../../assets/ContactUsImgs/SvgCross.svg";
-
+import svg1 from "../../../assets/HomePageImgs/svg1.svg";
+import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 const ContactUsWith = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -13,9 +14,7 @@ const ContactUsWith = () => {
     subject: "",
     message: "",
   });
-
   const [errors, setErrors] = useState({});
-
   const validateForm = () => {
     let tempErrors = {};
     if (!formData.fullName.trim())
@@ -76,9 +75,16 @@ const ContactUsWith = () => {
       className="py-12 bg-no-repeat bg-bottom pb-32"
       style={{ backgroundImage: `url(${BgImg})` }}
     >
-      <div className="container overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10 min-w-0 min-h-0">
+      <div className="container">
+        <h2 className="uppercase font-bold text-xl flex gap-2">
+          <img src={svg1} alt="aboutUs" />
+          About us
+          <img src={svg2} alt="aboutUs" />
+        </h2>
+      </div>
+      <div className="container overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10 min-w-0 min-h-0 ">
         <form
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-w-0"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-10 "
           onSubmit={handleSubmit}
         >
           <div className="relative">
@@ -89,7 +95,7 @@ const ContactUsWith = () => {
               onChange={(e) =>
                 setFormData({ ...formData, fullName: e.target.value })
               }
-              className={`w-full box-border border p-3 pr-10 rounded-sm focus:bg-white ${
+              className={`w-full box-border border p-4 pr-10 rounded-sm focus:bg-white ${
                 errors.fullName ? "border-red-500" : "border-gray-300"
               }`}
             />
@@ -106,7 +112,7 @@ const ContactUsWith = () => {
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
-              className={`w-full box-border border p-3 pr-10 rounded-sm focus:bg-white ${
+              className={`w-full box-border border p-4 pr-10 rounded-sm focus:bg-white ${
                 errors.email ? "border-red-500" : "border-gray-300"
               }`}
             />
@@ -125,7 +131,7 @@ const ContactUsWith = () => {
                 if (/^\d{0,10}$/.test(value))
                   setFormData({ ...formData, phone: value });
               }}
-              className={`w-full box-border border p-3 pr-10 rounded-sm focus:bg-white ${
+              className={`w-full box-border border p-4 pr-10 rounded-sm focus:bg-white ${
                 errors.phone ? "border-red-500" : "border-gray-300"
               }`}
             />
@@ -142,7 +148,7 @@ const ContactUsWith = () => {
               onChange={(e) =>
                 setFormData({ ...formData, subject: e.target.value })
               }
-              className={`w-full box-border border p-3 pr-10 rounded-sm focus:bg-white ${
+              className={`w-full box-border border p-4 pr-10 rounded-sm focus:bg-white ${
                 errors.subject ? "border-red-500" : "border-gray-300"
               }`}
             />
@@ -159,7 +165,7 @@ const ContactUsWith = () => {
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
               }
-              className={`w-full box-border border p-3 pr-10 rounded-sm focus:bg-white ${
+              className={`w-full box-border border p-5 pr-10 rounded-sm focus:bg-white ${
                 errors.message ? "border-red-500" : "border-gray-300"
               }`}
             />
@@ -171,25 +177,25 @@ const ContactUsWith = () => {
           <div className="sm:col-span-2">
             <PrimaryBtn
               type="submit"
-              className="px-6 py-3 text-white font-semibold rounded-sm w-full sm:w-auto"
+              className="px-6 py-4 text-white font-semibold rounded-sm w-full sm:w-auto items-center justify-center"
             >
               Submit
             </PrimaryBtn>
           </div>
         </form>
 
-        <div className="space-y-6 min-w-0">
+        <div className="space-y-6 w-full">
           {infoBoxes.map((box) => (
             <div
               key={box.id}
-              className="relative border shadow p-6 rounded-sm bg-white mdflex flex-col sm:flex-row md:items-center gap-4"
+              className="relative border shadow p-5 rounded-sm bg-white flex flex-col md:flex-row md:items-center gap-4 "
             >
-              <div className="text-4xl text-primary bg-[#F8F8F8] border-primary p-2 flex rounded-full justify-between ">
+              <div className="text-4xl text-primary bg-[#F8F8F8] border-primary p-3 rounded-full w-fit border-r-2 ">
                 {box.icon}
               </div>
-              <div>
+              <div className="">
                 <p className="font-bold text-2xl text-primary ">{box.title}</p>
-                <p className="mt-2 text-[#162C3E]">{box.text}</p>
+                <p className="mt-2 text-[#162C3E] text-sm md:text-base lg:text-base">{box.text}</p>
               </div>
               <img
                 src={SvgCross}
