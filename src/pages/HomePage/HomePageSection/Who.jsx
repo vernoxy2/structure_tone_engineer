@@ -5,6 +5,7 @@ import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 import BaseLine from "../../../component/BaseLine";
 import PrimaryBtn from "../../../component/PrimaryBtn";
 
+
 const Who = () => {
   return (
     <section className="container">
