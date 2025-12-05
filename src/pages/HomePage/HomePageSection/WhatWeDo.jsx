@@ -88,14 +88,20 @@ const WhatWeDo = () => {
         {cardData.map((card) => (
           <div key={card.id} className="p-7 bg-white rounded-lg shadow-md">
             <div className="flex items-center justify-between ">
-              <img src={card.img} alt={card.title} className="w-20 h-20 mb-4 ms-14 " />
-              <BaseLine className="bg-[#DEDEDE]"/> 
+              <img
+                src={card.img}
+                alt={card.title}
+                className="w-20 h-20 mb-4 ms-14 "
+              />
+              <BaseLine className="bg-[#DEDEDE]" />
             </div>
             <div className="flex flex-row mt-4">
               <img src={card.image} alt={card.title} className="w-12 h-14" />
 
               <div className="ms-3 ">
-                <h3 className="text-2xl font-bold text-primary ">{card.title}</h3>
+                <h3 className="text-2xl font-bold text-primary ">
+                  {card.title}
+                </h3>
                 <p className="text-base mt-4 text-[#162C3E] font-normal">
                   {card.subText}
                 </p>

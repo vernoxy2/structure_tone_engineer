@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Vector5 from "../../../assets/ProjectPageImgs/Vector5.svg"
 
 const HeadSection = ({
   slides,
@@ -36,7 +37,10 @@ const HeadSection = ({
           <h1 className="text-4xl md:text-5xl lg:text-6xl text-start font-black text-white uppercase">
             {current.MainText}
           </h1>
+          <div className="flex gap-6">
+            <img src={Vector5} alt="" className=" h-auto" />
           <h2 className="text-white lg:w-[90%]">{current.SubText}</h2>
+          </div>
         </div>
       </div>
     </section>

@@ -1,9 +1,7 @@
 import React, {  } from "react";
 import headImg from "../../../assets/HomePageImgs/Headimg.png";
 
-
-const Head = () => {
-  // const current = slides[index];
+const Head = () => { 
   return (
     <div
       style={{
