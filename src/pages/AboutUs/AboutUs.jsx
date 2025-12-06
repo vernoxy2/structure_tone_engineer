@@ -4,6 +4,7 @@ import HeadImg from "../../assets/AboutUsPageImgs/HeadImg.png";
 import CleanFlex from './AboutUsSection/CleanFlex';
 import Founder from './AboutUsSection/Founder';
 import Mission from './AboutUsSection/Mission';
+import GetInTouch from './AboutUsSection/GetInTouch';
 
 const AboutUs = () => {
 const slides=[{
@@ -16,11 +17,12 @@ const slides=[{
   ),
 }]
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header slides={slides}/>
       <CleanFlex/>
       <Founder/>
       <Mission/>
+      <GetInTouch />
     </div>
   )
 }
