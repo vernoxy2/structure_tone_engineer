@@ -20,7 +20,7 @@ const OurProject = () => {
       : DataImage.filter((item) => item.category === activeTab);
 
   return (
-    <section className="py-10 border">
+    <section className="py-10">
       <div className="container mx-auto text-center px-4">
         {/* Heading */}
         <h2 className="uppercase flex gap-2 items-center justify-center font-bold text-xl">
