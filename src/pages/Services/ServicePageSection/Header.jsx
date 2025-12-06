@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import Vector5 from "../../../assets/ProjectPageImgs/Vector5.svg"
 const Header = ({
   slides,
   duration = 4500,
@@ -36,7 +36,10 @@ const Header = ({
           <h1 className="text-4xl md:text-5xl lg:text-6xl text-start font-bold uppercase text-primary">
             {current.MainText}
           </h1>
+          <div className="flex gap-6">
+            <img src={Vector5} alt="" className=" h-auto" />
           <p className="text-white lg:w-4/5">{current.SubText}</p>
+          </div>
         </div>
       </div>
       <h1></h1>
