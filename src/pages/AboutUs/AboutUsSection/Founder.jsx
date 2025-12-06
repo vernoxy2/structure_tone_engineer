@@ -2,7 +2,7 @@ import React from "react";
 import svg1 from "../../../assets/HomePageImgs/svg1.svg";
 import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 import Founder1 from "../../../assets/AboutUsPageImgs/Founder/Founder1.png";
-import bgImg from "../../../assets/AboutUsPageImgs/Founder/bgImg.png"; // <-- your background image
+import BgImg from "../../../assets/AboutUsPageImgs/Founder/BgImg.png"; // <-- your background image
 
 const Founder = () => {
   return (
@@ -11,7 +11,7 @@ const Founder = () => {
         {/* col1 */}
         <div
           className="space-y-10 md:w-12/12  ml-auto text-start justify-between order-2 md:order-1 bg-no-repeat bg-left-bottom bg-contain"
-          style={{ backgroundImage: `url(${bgImg})` }}
+          style={{ backgroundImage: `url(${BgImg})` }}
         >
           <h2 className="uppercase font-bold text-xl flex gap-2 font-spacegrotesk">
             <img src={svg1} alt="aboutUs" />

@@ -1,160 +1,8 @@
-// import React, { useState, useEffect } from "react";
-// import svg1 from "../../../assets/HomePageImgs/svg1.svg";
-// import svg2 from "../../../assets/HomePageImgs/svg2.svg";
-// import MaskGroup1 from "../../../assets/HomePageImgs/MaskGroup1.svg";
-// import MaskGroup2 from "../../../assets/HomePageImgs/MaskGroup2.svg";
-
-// const testimonials = [
-//   {
-//     id: 1,
-//     text: "Working with them was seamless, professional, and exceeded expectations every step of the way.",
-//     name: "Ritik Desai",
-//     role: "Contractor",
-//     img: MaskGroup1,
-//   },
-//   {
-//     id: 2,
-//     text: "Exceptional service, transparent communication, and outstanding project execution from start to finish.",
-//     name: "Ananya Sharma",
-//     role: "Contractor",
-//     img: MaskGroup2,
-//   },
-//   {
-//     id: 3,
-//     text: "Working with them was seamless, professional, and exceeded expectations every step of the way.",
-//     name: "Vaibhav Chauhan",
-//     role: "Contractor",
-//     img: MaskGroup1,
-//   },
-//   {
-//     id: 4,
-//     text: "Exceptional service, transparent communication, and outstanding project execution from start to finish.",
-//     name: "Manisha Chauhan",
-//     role: "Contractor",
-//     img: MaskGroup2,
-//   },
-//   {
-//     id: 5,
-//     text: "Working with them was seamless, professional, and exceeded expectations every step of the way.",
-//     name: "priya vashisht",
-//     role: "Contractor",
-//     img: MaskGroup1,
-//   },
-//   {
-//     id: 6,
-//     text: "Exceptional service, transparent communication, and outstanding project execution from start to finish.",
-//     name: "simran roy",
-//     role: "Contractor",
-//     img: MaskGroup2,
-//   },
-// ];
-
-// const Client = () => {
-//   const [index, setIndex] = useState(0);
-
-//   const slides = [];
-//   for (let i = 0; i < testimonials.length; i += 2) {
-//     slides.push(testimonials.slice(i, i + 2));
-//   }
-
-//   useEffect(() => {
-//     const timer = setInterval(() => {
-//       setIndex((prev) => (prev + 1) % slides.length);
-//     }, 4000);
-//     return () => clearInterval(timer);
-//   }, [slides.length]);
-
-//   const handleDotClick = (i) => setIndex(i);
-
-//   return (
-//     <section>
-//       <div className="container grid grid-cols-1 md:grid-cols-12 gap-10 py-10">
-//         <div className="md:col-span-3">
-//           <h2 className="uppercase font-spaceGrotesk font-bold text-xl flex gap-2 text-[#162C3E] items-center">
-//             <img src={svg1} alt="aboutUs" />
-//             CLIENT TESTIMONIALS
-//             <img src={svg2} alt="aboutUs" />
-//           </h2>
-
-//           <h1 className="text-primary text-start font-bold font-spaceGrotesk leading-tight text-5xl md:text-4xl mt-7">
-//             See What Our Clients Are Saying
-//           </h1>
-
-//           {/* DESKTOP DOTS */}
-//           <div className="hidden md:flex gap-5 mt-8"> {/* UPDATED SPACING */}
-//             {slides.map((_, i) => (
-//               <div
-//                 key={i}
-//                 onClick={() => handleDotClick(i)}
-//                 className={`w-3 h-3 border rounded-full cursor-pointer transition-all  ${
-//                   index === i ? "bg-[#162C3E]" : "bg-gray-300"
-//                 }`}
-//               ></div>
-//             ))}
-//           </div>
-//         </div>
-
-//         <div className="overflow-hidden order-1 md:order-2 md:col-span-8 ">
-//           <div
-//             className="flex transition-all duration-700 "
-//             style={{ transform: `translateX(-${index * 100}%)` }}
-//           >
-//             {slides.map((pair, i) => (
-//               <div
-//                 key={i}
-//                 className="min-w-full  bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
-//               >
-//                 {pair.map((item, j) => (
-//                   <div
-//                     key={j}
-//                     className="bg-white shadow-md p-7 rounded-sm border border-red-500 relative"
-//                   >
-//                     <p className="text-[#162C3E] text-lg font-poppins leading-relaxed mb-10">
-//                       {item.text}
-//                     </p>
-
-//                     <h3 className="font-bold text-primary text-2xl">
-//                       {item.name}
-//                     </h3>
-//                     <p className="text-[#162C3E] font-poppins text-base">{item.role}</p>
-
-//                     <div className="absolute bottom-6 right-6 border-4 border-primary rounded-sm p-1 bg-white">
-//                       <img
-//                         src={item.img}
-//                         alt={item.name}
-//                         className="rounded-sm object-cover"
-//                       />
-//                     </div>
-//                   </div>
-//                 ))}
-//               </div>
-//             ))}
-//           </div>
-
-//           <div className="flex md:hidden gap-3 pt-4 justify-center">
-//             {slides.map((_, i) => (
-//               <div
-//                 key={i}
-//                 onClick={() => handleDotClick(i)}
-//                 className={`w-3 h-3  border rounded-sm cursor-pointer transition-all ${
-//                   index === i ? "bg-[#162C3E]" : "bg-gray-300"
-//                 }`}
-//               ></div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Client;
-
 import React, { useState, useEffect } from "react";
 import svg1 from "../../../assets/HomePageImgs/svg1.svg";
 import svg2 from "../../../assets/HomePageImgs/svg2.svg";
-import MaskGroup1 from "../../../assets/HomePageImgs/MaskGroup1.svg";
-import MaskGroup2 from "../../../assets/HomePageImgs/MaskGroup2.svg";
+// import MaskGroup1 from "../../../assets/HomePageImgs/MaskGroup1.svg";
+// import MaskGroup2 from "../../../assets/HomePageImgs/MaskGroup2.svg";
 
 const testimonials = [
   {
@@ -162,42 +10,42 @@ const testimonials = [
     text: "Working with them was seamless, professional, and exceeded expectations every step of the way.",
     name: "Ritik Desai",
     role: "Contractor",
-    img: MaskGroup1,
+    // img: MaskGroup1,
   },
   {
     id: 2,
     text: "Exceptional service, transparent communication, and outstanding project execution from start to finish.",
     name: "Ananya Sharma",
     role: "Contractor",
-    img: MaskGroup2,
+    // img: MaskGroup2,
   },
   {
     id: 3,
     text: "Working with them was seamless, professional, and exceeded expectations every step of the way.",
     name: "Vaibhav Chauhan",
     role: "Contractor",
-    img: MaskGroup1,
+    // img: MaskGroup1,
   },
   {
     id: 4,
     text: "Exceptional service, transparent communication, and outstanding project execution from start to finish.",
     name: "Manisha Chauhan",
     role: "Contractor",
-    img: MaskGroup2,
+    // img: MaskGroup2,
   },
   {
     id: 5,
     text: "Working with them was seamless, professional, and exceeded expectations every step of the way.",
     name: "priya vashisht",
     role: "Contractor",
-    img: MaskGroup1,
+    // img: MaskGroup1,
   },
   {
     id: 6,
     text: "Exceptional service, transparent communication, and outstanding project execution from start to finish.",
     name: "simran roy",
     role: "Contractor",
-    img: MaskGroup2,
+    // img: MaskGroup2,
   },
 ];
 
@@ -317,13 +165,13 @@ const Client = () => {
                     </h3>
                     <p className="text-[#162C3E] font-poppins text-base">{item.role}</p>
 
-                    <div className="absolute bottom-6 right-6 border-4 border-primary rounded-sm p-1 bg-white">
+                    {/* <div className="absolute bottom-6 right-6 border-4 border-primary rounded-sm p-1 bg-white">
                       <img
                         src={item.img}
                         alt={item.name}
                         className="rounded-sm object-cover"
                       />
-                    </div>
+                    </div> */}
                   </div>
                 ))}
               </div>
