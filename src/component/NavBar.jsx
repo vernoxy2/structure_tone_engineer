@@ -51,7 +51,7 @@ const NavBar = () => {
           className="lg:hidden text-4xl py-5 text-white px-5 rounded-md"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <HiX /> : <HiMenu />}
+          {isOpen ? <HiX className="text-black"/> : <HiMenu className="text-black"/>}
         </button>
       </div>
 

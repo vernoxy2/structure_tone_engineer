@@ -78,7 +78,7 @@ const GetInTouch = () => {
   };
 
   return (
-    <section className="py-10 border relative max-h: 100%">
+    <section className="py-10 relative max-h:100%">
       <div style={bgAnimatedStyle}>
         <div
           ref={wrapRef}

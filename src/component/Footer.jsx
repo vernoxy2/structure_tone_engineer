@@ -11,15 +11,28 @@ import BaseLine from "../component/BaseLine";
 
 const LinksData = [
   { id: 1, name: "Home", Link: "/" },
-  { id: 2, name: "About us", Link: "/about-us" },
-  { id: 3, name: "Projects Page", Link: "/projects" },
+  { id: 2, name: "About us", Link: "/aboutus" },
+  { id: 3, name: "Projects Page", Link: "/project" },
   { id: 4, name: "Services Page", Link: "/services" },
 ];
 
 const project = [
-  { id: 0, name: "Commercial Project" },
-  { id: 1, name: "Residential Project" },
-  { id: 2, name: "Industrial Project" },
+
+  {
+    id: 0,
+    name: "Commercial Project",
+    url: "/project?type=Commercial Project",
+  },
+  {
+    id: 1,
+    name: "Residential Project",
+    url: "/project?type=Residential Project",
+  },
+  {
+    id: 2,
+    name: "Industrial Project",
+    url: "/project?type=Industrial Project",
+  },
 ];
 
 const contactInfo = [
@@ -30,12 +43,12 @@ const contactInfo = [
   },
   {
     title: "Call Us",
-    icon: <MdOutlinePhone className="text-3xl text-primary" />,
+    icon: <MdOutlinePhone className="text-5xl p-1 text-primary" />,
     details: "+91 99097 90008",
   },
   {
     title: "Email",
-    icon: <CiMail className="text-3xl text-primary" />,
+    icon: <CiMail className="text-5xl p-1 text-primary" />,
     details: "structuretoneengineers@gmail.com",
     underline: true,
   },
@@ -55,7 +68,6 @@ const Footer = () => {
       className="bg-black text-white py-10 pb-10 relative bg-cover bg-no-repeat bg-center overflow-hidden"
     >
       <div className="container w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-8">
-
         {/* First Column */}
         <div className="text-start">
           <img
@@ -64,15 +76,18 @@ const Footer = () => {
             className="h-12 md:h-20 mb-5 text-base"
           />
           <p>
-            <strong className="text-primary">Structuretone</strong> provides modern urban development solutions,
-            blending aesthetics, functionality, and sustainability.
+            <strong className="text-primary">Structuretone</strong> provides
+            modern urban development solutions, blending aesthetics,
+            functionality, and sustainability.
           </p>
           <BaseLine className="mt-3 w-2/6 p-[0.5]" />
         </div>
 
-        {/* Second Column */}
+        {/* Quick Links */}
         <div className="text-start lg:ms-11 space-y-5">
-          <h1 className="font-extrabold text-3xl mb-2 pb-1 w-fit">Quick Links</h1>
+          <h1 className="font-extrabold text-3xl mb-2 pb-1 w-fit">
+            Quick Links
+          </h1>
           <BaseLine className="mb-4 bg-gradient-to-r from-primary to-black/80" />
 
           <ul className="space-y-2 text-sm flex flex-col items-start w-full">
@@ -89,25 +104,37 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Third Column */}
+        {/* Project Pages */}
         <div className="text-start space-y-5">
-          <h1 className="font-extrabold text-3xl mb-2 pb-1 w-fit">Project Pages</h1>
+          <h1 className="font-extrabold text-3xl mb-2 pb-1 w-fit">
+            Project Pages
+          </h1>
           <BaseLine className="mb-4 bg-gradient-to-r from-primary to-black/80" />
 
           <ul className="space-y-2 text-sm">
             {project.map((item) => (
               <li key={item.id}>
-                <span className="hover:text-primary/80 transition-colors cursor-pointer">
+                <Link
+                  to={item.url}
+                  // className="hover:text-primary/80 transition-colors cursor-pointer"
+                  className={({ isActive }) =>
+                    `text-textdark text-xl md:text-2xl font-medium hover:text-primary transition-colors duration-200 ${
+                      isActive ? "text-primary font-semibold" : ""
+                    }`
+                  }
+                >
                   {item.name}
-                </span>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Fourth Column */}
+        {/* Contact Info */}
         <div className="space-y-5">
-          <h1 className="font-extrabold text-3xl mb-2 pb-1 w-fit text-primary">Contact Us</h1>
+          <h1 className="font-extrabold text-3xl mb-2 pb-1 w-fit text-primary">
+            Contact Us
+          </h1>
           <BaseLine className="mb-4 bg-gradient-to-r from-primary to-black/80" />
 
           {contactInfo.map((info, index) => (
@@ -116,14 +143,15 @@ const Footer = () => {
                 {info.icon}
               </div>
               <div>
-                <h2 className="font-bold text-[20px] text-primary ms-2">{info.title}</h2>
-                <p className={`text-sm ms-2 ${info.underline ? "underline" : ""}`}>
-                  {info.details.split("\n").map((line, i) => (
-                    <span key={i}>
-                      {line}
-                      <br />
-                    </span>
-                  ))}
+                <h2 className="font-bold text-[20px] text-primary ms-2">
+                  {info.title}
+                </h2>
+                <p
+                  className={`text-sm ms-2 ${
+                    info.underline ? "underline" : ""
+                  }`}
+                >
+                  {info.details}
                 </p>
               </div>
             </div>
