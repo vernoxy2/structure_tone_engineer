@@ -42,7 +42,7 @@ const Structure = () => {
       className="bg-center bg-cover bg-no-repeat py-10 space-y-0"
       style={{ backgroundImage: `url(${BackImg})` }}
     >
-      <h1 className="text-center text-[#D9D9D9] text-4xl md:text-5xl lg:text-6xl translate-y-14 md:translate-y-16 ">
+      <h1 className="text-center text-[#D9D9D9] text-4xl md:text-5xl lg:text-6xl translate-y-14 md:translate-y-16 relative z-0 ">
         Stand Behind Our <br /> Structures
       </h1>
 
@@ -73,7 +73,7 @@ const Structure = () => {
 
         {/* CENTER IMAGE (first on mobile) */}
         <div className="w-full sm:w-2/12 flex justify-center order-1 sm:order-2 mb-6 sm:mb-0 ">
-          <img src={StructureImg} alt="" className="h-96 md:h-auto" />
+          <img src={StructureImg} alt="" className="h-96 md:h-auto relative z-10 " />
         </div>
 
         {/* RIGHT CARD COLUMN */}

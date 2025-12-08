@@ -6,6 +6,7 @@ import OurProjects from "./HomePageSection/OurProjects";
 import Struture from "./HomePageSection/Struture";
 import Status from "./HomePageSection/Status";
 import Client from "./HomePageSection/Client";
+import GetInTouch from "../AboutUs/AboutUsSection/GetInTouch";
 
 const HomePage = () => {
   return (
@@ -16,7 +17,8 @@ const HomePage = () => {
       <OurProjects />
       <Struture />
       <Status />
-      <Client />  
+      <Client /> 
+      <GetInTouch /> 
     </div>
   );
 };
