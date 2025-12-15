@@ -4,8 +4,6 @@ import { MdOutlinePhone } from "react-icons/md";
 import { CiLocationOn, CiMail } from "react-icons/ci";
 import BgImg from "../../../assets/ContactUsImgs/BgImg.png";
 import SvgCross from "../../../assets/ContactUsImgs/SvgCross.svg";
-import svg1 from "../../../assets/HomePageImgs/svg1.svg";
-import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 import Title from "../../../component/Title";
 const ContactUsWith = () => {
   const [formData, setFormData] = useState({
@@ -77,10 +75,11 @@ const ContactUsWith = () => {
       style={{ backgroundImage: `url(${BgImg})` }}
     >
       <div className="container">
-        <Title>CONTCT WITH US</Title>
+        <Title AOS={"fade-right"}>CONTCT WITH US</Title>
       </div>
       <div className="container overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10 min-w-0 min-h-0 ">
         <form
+        data-aos="fade-down"
           className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10  "
           onSubmit={handleSubmit}
         >
@@ -183,6 +182,7 @@ const ContactUsWith = () => {
         <div className="space-y-5 w-full">
           {infoBoxes.map((box) => (
             <div
+            data-aos="fade-down"
               key={box.id}
               className="relative border shadow p-5 rounded-sm bg-white flex flex-col md:flex-row md:items-center gap-4"
             >

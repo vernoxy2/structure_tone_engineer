@@ -8,6 +8,7 @@ import Frame2 from "../../../assets/HomePageImgs/Frame2.svg";
 import Frame3 from "../../../assets/HomePageImgs/Frame3.svg";
 import Frame4 from "../../../assets/HomePageImgs/Frame4.svg";
 import BaseLine from "../../../component/BaseLine";
+import Title from "../../../component/Title";
 
 const Count = [
   { id: 1, count: 10, suffix: "+", text: "Years Experience", icon: Frame1 },
@@ -71,24 +72,20 @@ const Status = () => {
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 md:w-[90%] lg:w-full md:ml-0 lg:ml-auto">
         {/* LEFT SECTION */}
         <div className="space-y-5">
-          <h2 className="uppercase font-bold text-xl flex gap-2 text-white items-center">
-            <img src={svg1} alt="aboutUs" />
-            COMPANY’S STATUS
-            <img src={svg2} alt="aboutUs" />
-          </h2>
+          <Title AOS={"fade-right"} className={"text-white"}>COMPANY’S STATUS</Title>
 
-          <h1 className="text-primary text-start font-bold font-spaceGrotesk leading-tight text-4xl">
+          <h1 data-aos="fade-right" className="text-primary text-start font-bold font-spaceGrotesk leading-tight text-4xl">
             Our Designs Set The Highest Standards
           </h1>
 
-          <p className="md:text-sm text-white font-poppins lg:w-5/6">
+          <p data-aos="fade-right" className="md:text-sm text-white font-poppins lg:w-5/6">
             Our team of structural engineers delivers innovative and sustainable
             engineering solutions for residential, commercial, and industrial
             projects. We focus on precision, collaboration, and quality to
             create structures that stand the test of time.
           </p>
 
-          <PrimaryBtn className="px-5 py-4 text-xl font-poppins">
+          <PrimaryBtn data-aos="zoom-in" className="px-5 py-4 text-xl font-poppins">
             Contact Now
           </PrimaryBtn>
         </div>
@@ -96,7 +93,7 @@ const Status = () => {
         {/* RIGHT SECTION */}
         <div className="grid md:grid-cols-2 gap-8">
           {Count.map((item, index) => (
-            <div key={item.id} className="text-white space-y-1 flex flex-col">
+            <div data-aos="fade-up" key={item.id} className="text-white space-y-1 flex flex-col">
               <div className="flex items-center justify-between w-[85%] ">
                 <BaseLine className="bg-primary"/>
                 <img src={item.icon} alt="icon" className=" scale-110 md:scale-100" />

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import svg1 from "../../../assets/HomePageImgs/svg1.svg";
-import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 import BgImg from "../../../assets/HomePageImgs/Client/BgImg.png";
 import Title from "../../../component/Title";
 
@@ -120,9 +118,9 @@ const Client = () => {
     >
       <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 py-10">
         <div className="md:col-span-3">
-          <Title>CLIENT</Title>
+          <Title AOS={"fade-up"}>CLIENT</Title>
 
-          <h1 className="text-primary text-start font-bold font-spaceGrotesk leading-tight text-5xl md:text-4xl mt-7">
+          <h1 data-aos="fade-up" className="text-primary text-start font-bold font-spaceGrotesk leading-tight text-5xl md:text-4xl mt-7">
             See What Our Clients Are Saying
           </h1>
 
@@ -130,6 +128,7 @@ const Client = () => {
           <div className="hidden md:flex gap-5 mt-8">
             {slides.map((_, i) => (
               <div
+              data-aos="fade"
                 key={i}
                 onClick={() => handleDotClick(i)}
                 className={`w-3 h-3 border rounded-full cursor-pointer transition-all ${
@@ -152,6 +151,7 @@ const Client = () => {
           >
             {loopSlides.map((pair, i) => (
               <div
+                data-aos="zoom-in"
                 key={i}
                 className="min-w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
               >

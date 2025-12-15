@@ -27,11 +27,12 @@ const OurProjects = () => {
   return (
     <section className="container -mb-36 relative z-10">
       <div className="mb-8">
-        <Title className="justify-center">Our Projects</Title>
-        <h1 className="mt-3">Project Highlights</h1>
+        <Title AOS={"zoom-in"} className="justify-center">Our Projects</Title>
+        <h1 data-aos="zoom-out" className="mt-3">Project Highlights</h1>
       </div>
 
       <div
+      data-aos="fade-up"
         style={{ backgroundImage: `url(${ProjectImg})` }}
         className="bg-cover bg-bottom-left bg-no-repeat lg:h-[525px]  "
       >

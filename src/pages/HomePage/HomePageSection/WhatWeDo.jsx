@@ -68,22 +68,22 @@ const WhatWeDo = () => {
       <div className="container grid grid-col-1 xl:grid-cols-3 md:grid-cols-2 gap-8 py-10">
         {/* LEFT SECTION */}
         <div className="space-y-3 flex flex-col justify-between">
-          <Title>What We Do</Title>
+          <Title AOS={"fade-right"}>What We Do</Title>
 
-          <h1 className="text-primary text-start text-5xl">
+          <h1 data-aos="fade-right" className="text-primary text-start text-5xl">
             Our Services that we provide
           </h1>
 
-          <p className="">
+          <p data-aos="fade-right" className="">
             Delivering clean, user-focused digital experiences backed by seven
             years’ expertise.
           </p>
 
-          <PrimaryBtn className="w-fit">Know More Services</PrimaryBtn>
+          <PrimaryBtn data-aos="zoom-in" className="w-fit">Know More Services</PrimaryBtn>
         </div>
 
         {cardData.map((card) => (
-          <div key={card.id} className="p-7 bg-white rounded-lg shadow-md group">
+          <div data-aos="flip-up" key={card.id} className="p-7 bg-white rounded-lg shadow-md group">
             <div className="flex items-center justify-between ">
               <img
                 src={card.img}

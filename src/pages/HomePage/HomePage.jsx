@@ -10,7 +10,7 @@ import GetInTouch from "../AboutUs/AboutUsSection/GetInTouch";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Head />
       <Who />
       <WhatWeDo />

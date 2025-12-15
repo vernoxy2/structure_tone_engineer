@@ -8,6 +8,7 @@ import Svg from "../../../assets/ServicePageImgs/Svg.svg";
 import Broucher from "../../../assets/ServicePageImgs/Broucher.svg";
 import Doc from "../../../assets/ServicePageImgs/Doc.svg";
 import { GoPlus } from "react-icons/go";
+import Title from "../../../component/Title";
 // LEFT SIDE MENU
 const menuList = [
   { id: 1, title: "Structural Design and Analysis" },
@@ -87,9 +88,10 @@ const Services = () => {
     <section className="container py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 ">
         {/* LEFT COLUMN MENU */}
-        <div className="space-y-5 bg-white text-white w-full md:space-y-3">
+        <div data-aos="fade-right" className="space-y-5 bg-white text-white w-full md:space-y-3">
           {menuList.map((item) => (
             <div
+            
               key={item.id}
               onClick={() => setActiveTab(item.id)}
               className={`cursor-pointer h-24 flex justify-between items-center transition group xl:text-xl md:text-md text-base font-semibold 
@@ -117,7 +119,7 @@ const Services = () => {
             </div>
           ))}
           {/* Brochure Buttons */}
-          <div className=" bg-[#162C3E] px-16 py-16 space-y-6">
+          <div data-aos="fade-right" className=" bg-[#162C3E] px-16 py-16 space-y-6">
             <div className="flex flex-row items-center justify-start gap-4">
               <img src={Svg} alt="Svg" className="items-center" />
               <h3 className="text-white font-bold text-2xl ">Brochures</h3>
@@ -141,22 +143,19 @@ const Services = () => {
 
         {/* RIGHT CONTENT AREA */}
         <div className="xl:col-span-2 space-y-6">
-          <h2 className="uppercase font-bold text-xl flex gap-2 text-[#162C3E]">
-            <img src={svg1} alt="icon1" />
-            Services
-            <img src={svg2} alt="icon2" />
-          </h2>
+          <Title AOS={"fade-up"}>Services</Title>
 
-          <h1 className="text-primary font-bold text-start ">
+          <h1 data-aos="fade-up" className="text-primary font-bold text-start ">
             Engineering Trust with Quality
           </h1>
           {/* DYNAMIC CONTENT BASED ON ACTIVE TAB */}
           <img
+          data-aos="zoom-in"
             src={selectedContent?.image}
             alt="service"
             className="rounded-sm w-full h-auto object-cover"
           />
-          <p className="text-[#162C3E] ">{selectedContent?.subText}</p>
+          <p data-aos="fade-up" className="text-[#162C3E] ">{selectedContent?.subText}</p>
         </div>
       </div>
     </section>

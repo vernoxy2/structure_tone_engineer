@@ -108,6 +108,7 @@ const Mission = () => {
           <div className=" grid grid-cols-1 lg:grid-cols-2 gap-8 2xl:w-10/12 mx-auto">
             {dataList1.map((item) => (
               <div
+              data-aos="fade-up"
                 key={item.id}
                 className="bg-white p-8 relative space-y-5 shadow-md"
               >
@@ -133,6 +134,7 @@ const Mission = () => {
 
             {dataList2.map((item) => (
               <div
+              data-aos="fade-up"
                 key={item.id}
                 className="bg-white p-8 space-y-5 relative  "
               >
@@ -164,6 +166,7 @@ const Mission = () => {
         <div className="flex space-y-8 2xl:w-10/12 mx-auto">
           {dataList3.map((item) => (
             <div
+            data-aos="fade-up"
               key={item.id}
               className="bg-white w-full mx-auto mt-8 relative p-6 shadow-md space-y-5"
             >
