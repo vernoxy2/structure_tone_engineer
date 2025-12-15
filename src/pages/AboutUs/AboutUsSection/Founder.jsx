@@ -1,8 +1,8 @@
 import React from "react";
-import svg1 from "../../../assets/HomePageImgs/svg1.svg";
-import svg2 from "../../../assets/HomePageImgs/svg2.svg";
+
 import Founder1 from "../../../assets/AboutUsPageImgs/Founder/Founder1.png";
 import BgImg from "../../../assets/AboutUsPageImgs/Founder/BgImg.png"; // <-- your background image
+import Title from "../../../component/Title";
 
 const Founder = () => {
   return (
@@ -14,14 +14,10 @@ const Founder = () => {
       <div className=" grid grid-cols-1 lg:grid-cols-2 lg:gap-24 gap-10  relative container">
         {/* col1 */}
         <div className="space-y-10 relative ml-auto text-start justify-between order-2 lg:order-1">
-          <h2 className="uppercase font-bold text-xl flex gap-2 font-spacegrotesk">
-            <img src={svg1} alt="aboutUs" />
-            ABOUT FOUNDER
-            <img src={svg2} alt="aboutUs" />
-          </h2>
+          <Title AOS={"fade-right"}>ABOUT FOUNDER</Title>
           {/* Bullet List */}
           <ul className="space-y-5 pl-2">
-            <li className="font-poppins relative pl-6 justify-between">
+            <li data-aos="fade-right" className="font-poppins relative pl-6 justify-between">
               <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-primary border-[3px] border-primary text-base"></div>
               <span className="font-bold text-primary">
                 As a seasoned structural
@@ -35,7 +31,7 @@ const Founder = () => {
               in their impact.
             </li>
 
-            <li className="font-poppins relative pl-6">
+            <li data-aos="fade-right" className="font-poppins relative pl-6">
               <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-primary border-[3px] border-primary text-base"></div>
               <span className="font-bold text-primary">At Structure Tone</span>{" "}
               Engineers, we believe every structure has a story. Founded on
@@ -48,8 +44,8 @@ const Founder = () => {
         </div>
         {/* col2 */}
         <div className="relative order-1 lg:order-2 flex justify-center">
-          <img src={Founder1} alt="Founder1" className="" />
-          <div className="absolute top-5 left-[-10px] bg-primary bg-opacity-80 px-2 py-1 rounded font-semibold">
+          <img data-aos="zoom-in" src={Founder1} alt="Founder1" className="" />
+          <div data-aos="fade-right" data-aos-delay="300" className="absolute top-5 left-[-10px] bg-primary bg-opacity-80 px-2 py-1 rounded font-semibold">
             <h1 className="text-white">Prithvi Lilawala</h1>
           </div>
         </div>

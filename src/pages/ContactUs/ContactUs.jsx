@@ -38,7 +38,7 @@ const ContactUs = () => {
         },
       ];
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <HeadSection slides={slides} />
       <ContactUsWith />
       <Location />

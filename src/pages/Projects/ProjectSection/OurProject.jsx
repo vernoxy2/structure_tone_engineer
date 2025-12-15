@@ -238,9 +238,9 @@ const OurProject = () => {
     <section className="py-10">
       <div className="container mx-auto text-center px-4">
 
-        <Title className="justify-center">Our Project</Title>
+        <Title AOS={"zoom-in"} className="justify-center">Our Project</Title>
 
-        <h1 className="mt-3 text-5xl md:text-4xl font-bold text-primary font-spacegrotesk">
+        <h1 data-aos="fade" className="mt-3 text-5xl md:text-4xl font-bold text-primary font-spacegrotesk">
           Quality Projects, Built Right
         </h1>
 
@@ -250,6 +250,7 @@ const OurProject = () => {
         >
           {["All","Commercial Project","Residential Project","Industrial Project"].map((tab) => (
             <button
+            data-aos="fade-up"
               key={tab}
               onClick={() => handleTabClick(tab)}
               className={`px-4 py-2 font-semibold border rounded transition-colors duration-300 ${
@@ -265,7 +266,7 @@ const OurProject = () => {
 
         <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredImages.map((item) => (
-            <div key={item.id} className="relative group overflow-hidden rounded-sm bg-none">
+            <div data-aos="zoom-in" key={item.id} className="relative group overflow-hidden rounded-sm bg-none">
               <img
                 src={item.img}
                 alt={item.category}
