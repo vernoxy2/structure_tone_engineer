@@ -1,6 +1,6 @@
 import React from "react";
 
-import image from "../../../assets/AboutUsPageImgs/image.webp";
+import image from "../../../assets/AboutUsPageImgs/AboutUsImg.webp";
 import Title from "../../../component/Title";
 
 const CleanFlex = () => {
