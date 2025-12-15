@@ -1,9 +1,5 @@
 import React from "react";
-import svg1 from "../../../assets/HomePageImgs/svg1.svg";
-import svg2 from "../../../assets/HomePageImgs/svg2.svg";
-import img1 from "../../../assets/AboutUsPageImgs/img1.png";
-import img2 from "../../../assets/AboutUsPageImgs/img2.png";
-import img3 from "../../../assets/AboutUsPageImgs/img3.png";
+
 import image from "../../../assets/AboutUsPageImgs/images.webp";
 import Title from "../../../component/Title";
 
