@@ -15,7 +15,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md w-full  md:py-2 px-5 md:px-10  top-0 left-0 z-50">
+    <nav data-aos="fade-down" className="bg-white shadow-md w-full  md:py-2 px-5 md:px-10  top-0 left-0 z-50 relative">
       <div className=" mx-auto flex items-center justify-between ">
         {/* Logo */}
         <NavLink to="/">
@@ -60,7 +60,7 @@ const NavBar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden bg-white shadow-lg w-full absolute top-16 md:top-20 left-0 transition-all duration-300 overflow-hidden ${
+        className={`lg:hidden bg-white shadow-lg w-full absolute top-16 md:top-20 left-0 transition-all duration-300 overflow-hidden  ${
           isOpen ? "h-fit" : "max-h-0"
         }`}
       >
