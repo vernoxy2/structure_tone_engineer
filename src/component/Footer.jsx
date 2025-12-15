@@ -67,7 +67,7 @@ const Footer = () => {
       style={{ backgroundImage: `url(${footerBgImg})` }}
       className="bg-black text-white py-10 pb-10 relative bg-cover bg-no-repeat bg-center overflow-hidden"
     >
-      <div className="container w-full grid grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="container w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* First Column */}
         <div className="text-start">
           <img

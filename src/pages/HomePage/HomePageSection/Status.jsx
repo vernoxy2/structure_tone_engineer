@@ -68,7 +68,7 @@ const Status = () => {
       className="py-16 bg-cover bg-center  bg-no-repeat"
       style={{ backgroundImage: `url(${StatusBgImg})` }}
     >
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 md:w-[90%] lg:w-full md:ml-0 lg:ml-auto">
         {/* LEFT SECTION */}
         <div className="space-y-5">
           <h2 className="uppercase font-bold text-xl flex gap-2 text-white items-center">
@@ -98,10 +98,10 @@ const Status = () => {
           {Count.map((item, index) => (
             <div key={item.id} className="text-white space-y-1 flex flex-col">
               <div className="flex items-center justify-between w-[85%] ">
-                <BaseLine className=""/>
-                <img src={item.icon} alt="icon" className="w-auto" />
+                <BaseLine className="bg-primary"/>
+                <img src={item.icon} alt="icon" className=" scale-110 md:scale-100" />
               </div>
-              <h2 className="text-8xl md:text-6xl lg:text-8xl font-semibold flex items-center gap-1">
+              <h2 className="text-8xl md:text-6xl xl:text-8xl font-semibold flex items-center gap-1">
                 <div
                   className="text-outline font-poppins"
                   ref={(el) => (refs.current[index] = el)}

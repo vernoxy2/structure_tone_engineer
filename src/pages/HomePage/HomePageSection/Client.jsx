@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import svg1 from "../../../assets/HomePageImgs/svg1.svg";
 import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 import BgImg from "../../../assets/HomePageImgs/Client/BgImg.png";
+import Title from "../../../component/Title";
 
 const testimonials = [
   {
@@ -9,117 +10,117 @@ const testimonials = [
     text: "Working with them was seamless, professional, and exceeded expectations every step of the way.",
     name: "Ritik Desai",
     role: "Contractor",
-    // img: MaskGroup1,
   },
   {
     id: 2,
     text: "Exceptional service, transparent communication, and outstanding project execution from start to finish.",
     name: "Ananya Sharma",
     role: "Contractor",
-    // img: MaskGroup2,
   },
   {
     id: 3,
     text: "Working with them was seamless, professional, and exceeded expectations every step of the way.",
     name: "Vaibhav Chauhan",
     role: "Contractor",
-    // img: MaskGroup1,
   },
   {
     id: 4,
     text: "Exceptional service, transparent communication, and outstanding project execution from start to finish.",
     name: "Manisha Chauhan",
     role: "Contractor",
-    // img: MaskGroup2,
   },
   {
     id: 5,
     text: "Working with them was seamless, professional, and exceeded expectations every step of the way.",
     name: "priya vashisht",
     role: "Contractor",
-    // img: MaskGroup1,
   },
   {
     id: 6,
     text: "Exceptional service, transparent communication, and outstanding project execution from start to finish.",
     name: "simran roy",
     role: "Contractor",
-    // img: MaskGroup2,
   },
 ];
 
 const Client = () => {
   const [index, setIndex] = useState(0);
-  // control whether transform has transition or not
   const [withTransition, setWithTransition] = useState(true);
+  const [slides, setSlides] = useState([]);
 
-  // Group into slides of 2 items
-  const slides = [];
-  for (let i = 0; i < testimonials.length; i += 2) {
-    slides.push(testimonials.slice(i, i + 2));
-  }
+  // Group into slides of 1 (mobile) or 2 (md+)
+  const getSlides = () => {
+    const isMobile = window.innerWidth < 768;
+    const sliceSize = isMobile ? 1 : 2;
 
-  // duplicate slides for smooth looping
+    const grouped = [];
+    for (let i = 0; i < testimonials.length; i += sliceSize) {
+      grouped.push(testimonials.slice(i, i + sliceSize));
+    }
+
+    return grouped;
+  };
+
+  // Create slides on load & resize
+  useEffect(() => {
+    const updateSlides = () => {
+      setSlides(getSlides());
+      setIndex(0);
+    };
+
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
+
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
+
+  // Duplicate slides for smooth looping
   const loopSlides = [...slides, ...slides];
-  const total = slides.length; // original count of slides (before duplication)
-  const transitionDurationMs = 900; // must match the duration in your "duration-700" (700ms)
+  const total = slides.length;
+  const transitionDurationMs = 900;
 
-  // Auto slide interval
+  // Auto slide
   useEffect(() => {
     const timer = setInterval(() => {
-      setIndex((prev) => {
-        // advance by 1; allow it to reach the duplicated end
-        return prev + 1;
-      });
+      setIndex((prev) => prev + 1);
     }, 7000);
 
     return () => clearInterval(timer);
   }, []);
 
-  // When index reaches the duplicated half (== total), wait for the transition to finish,
-  // then snap back to 0 WITHOUT transition, then re-enable transition.
+  // Infinite loop snap-back
   useEffect(() => {
     if (index === total) {
-      // let the current transition finish (transitionDurationMs),
-      // then disable transition and jump to 0 instantly
       const t1 = setTimeout(() => {
-        setWithTransition(false); // disable transition so jump is instant
-        setIndex(0); // snap back to start without animation
+        setWithTransition(false);
+        setIndex(0);
 
-        // small tick to let DOM update, then re-enable transitions for future slides
         const t2 = setTimeout(() => {
           setWithTransition(true);
         }, 50);
 
-        // cleanup inner timeout if needed
         return () => clearTimeout(t2);
       }, transitionDurationMs);
 
       return () => clearTimeout(t1);
     }
-    // no cleanup needed if index !== total
-    return;
   }, [index, total]);
 
-  // dot click (go to a particular slide index)
   const handleDotClick = (i) => {
-    // if user clicks a dot we want transition enabled and index set to that slide
     setWithTransition(true);
     setIndex(i);
   };
+
+  if (!slides.length) return null;
 
   return (
     <section
       style={{ backgroundImage: `url(${BgImg})` }}
       className="bg-cover bg-no-repeat bg-center"
     >
-      <div className="container grid grid-cols-1 md:grid-cols-12 gap-10 py-10">
+      <div className="container grid grid-cols-1 lg:grid-cols-12 gap-10 py-10">
         <div className="md:col-span-3">
-          <h2 className="uppercase font-spaceGrotesk font-bold text-xl flex gap-2 text-[#162C3E] items-center">
-            <img src={svg1} alt="aboutUs" />
-            CLIENT
-            <img src={svg2} alt="aboutUs" />
-          </h2>
+          <Title>CLIENT</Title>
 
           <h1 className="text-primary text-start font-bold font-spaceGrotesk leading-tight text-5xl md:text-4xl mt-7">
             See What Our Clients Are Saying
@@ -139,9 +140,8 @@ const Client = () => {
           </div>
         </div>
 
-        <div className="overflow-hidden order-1 md:order-2 md:col-span-8  ">
+        <div className="overflow-hidden order-1 md:order-2 md:col-span-8">
           <div
-            // toggle inline transition on/off so we can snap without animation
             className="flex"
             style={{
               transform: `translateX(-${index * 100}%)`,

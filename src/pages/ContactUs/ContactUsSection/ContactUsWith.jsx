@@ -6,6 +6,7 @@ import BgImg from "../../../assets/ContactUsImgs/BgImg.png";
 import SvgCross from "../../../assets/ContactUsImgs/SvgCross.svg";
 import svg1 from "../../../assets/HomePageImgs/svg1.svg";
 import svg2 from "../../../assets/HomePageImgs/svg2.svg";
+import Title from "../../../component/Title";
 const ContactUsWith = () => {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -76,15 +77,11 @@ const ContactUsWith = () => {
       style={{ backgroundImage: `url(${BgImg})` }}
     >
       <div className="container">
-        <h2 className="uppercase font-bold text-xl flex gap-2">
-          <img src={svg1} alt="aboutUs" />
-          About us
-          <img src={svg2} alt="aboutUs" />
-        </h2>
+        <Title>CONTCT WITH US</Title>
       </div>
       <div className="container overflow-hidden grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10 min-w-0 min-h-0 ">
         <form
-          className="grid grid-cols-1 sm:grid-cols-2 gap-10 "
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10  "
           onSubmit={handleSubmit}
         >
           <div className="relative">
@@ -183,24 +180,33 @@ const ContactUsWith = () => {
             </PrimaryBtn>
           </div>
         </form>
-        <div className="space-y-6 w-full">
+        <div className="space-y-5 w-full">
           {infoBoxes.map((box) => (
             <div
               key={box.id}
               className="relative border shadow p-5 rounded-sm bg-white flex flex-col md:flex-row md:items-center gap-4"
             >
-              <div className="flex flex-row items-center gap-4">
+              {/* Icon + Title */}
+              <div className="flex flex-row items-center gap-4 flex-shrink-0">
                 <div className="text-4xl text-primary bg-[#F8F8F8] border-primary p-3 rounded-full w-fit border-r-2">
                   {box.icon}
                 </div>
-                <p className="font-bold text-2xl text-primary">{box.title}</p>
+                <div className="flex flex-col">
+                  <p className="font-bold text-xl sm:text-2xl md:text-2xl text-primary">
+                    {box.title}
+                  </p>
+
+                  {/* Description text */}
+                  <p className="mt-2 text-[#162C3E] text-sm sm:text-base md:text-base lg:text-base flex-1">
+                    {box.text}
+                  </p>
+                </div>
               </div>
-              <p className="mt-2 text-[#162C3E] text-sm md:text-base lg:text-base ">
-                {box.text}
-              </p>
+
+              {/* Close icon */}
               <img
                 src={SvgCross}
-                className="w-6 h-6 absolute right-0 bottom-0"
+                className="w-5 h-5 sm:w-6 sm:h-6 absolute right-2 bottom-2 md:right-3 md:bottom-3"
               />
             </div>
           ))}

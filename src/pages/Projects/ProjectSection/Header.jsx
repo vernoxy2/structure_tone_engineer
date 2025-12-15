@@ -7,7 +7,7 @@ const Header = ({ slides }) => {
 
   return (
     <section
-      className="bg-cover bg-center bg-no-repeat mt-28 lg:h-screen max-h-[546px]"
+      className="bg-cover bg-center bg-no-repeat lg:h-screen max-h-[546px]"
       style={{ backgroundImage: `url(${HeadImg})` }} // use slide BgImg
     >
       <div className="container grid grid-cols-1 md:grid-cols-2 h-full">

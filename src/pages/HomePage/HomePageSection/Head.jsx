@@ -7,7 +7,7 @@ const Head = () => {
   style={{
     backgroundImage: `url(${headImg})`,
   }}
-  className="bg-cover bg-center mt-35 h-[320px] sm:h-[400px] md:h-[480px] lg:h-screen"
+  className="bg-cover bg-center h-[320px] sm:h-[400px] md:h-[480px] lg:h-[]"
 ></div>
 
   );

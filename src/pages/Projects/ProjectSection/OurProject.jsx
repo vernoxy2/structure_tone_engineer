@@ -158,6 +158,7 @@ import ResProj from "../../../assets/ProjectPageImgs/ResProj.webp";
 import IndProj from "../../../assets/ProjectPageImgs/IndProj.webp";
 import svg1 from "../../../assets/HomePageImgs/svg1.svg";
 import svg2 from "../../../assets/HomePageImgs/svg2.svg";
+import Title from "../../../component/Title";
 
 const OurProject = () => {
   const location = useLocation();
@@ -237,11 +238,7 @@ const OurProject = () => {
     <section className="py-10">
       <div className="container mx-auto text-center px-4">
 
-        <h2 className="uppercase flex gap-2 items-center justify-center font-bold text-xl">
-          <img src={svg1} alt="icon" className="h-6 w-6" />
-          Our Project
-          <img src={svg2} alt="icon" className="h-6 w-6" />
-        </h2>
+        <Title className="justify-center">Our Project</Title>
 
         <h1 className="mt-3 text-5xl md:text-4xl font-bold text-primary font-spacegrotesk">
           Quality Projects, Built Right
@@ -266,7 +263,7 @@ const OurProject = () => {
           ))}
         </div>
 
-        <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5">
+        <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredImages.map((item) => (
             <div key={item.id} className="relative group overflow-hidden rounded-sm bg-none">
               <img
@@ -275,14 +272,14 @@ const OurProject = () => {
                 className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
               />
 
-              <div className="absolute top-2 right-0 bg-white bg-opacity-70 px-3 py-1 rounded-sm font-bold text-xl text-[#162C3E] font-spacegrotesk z-10">
+              <div className="absolute top-4 -right-3 bg-white bg-opacity-70 px-5 py-3 shadow-md font-bold text-2xl text-[#162C3E] font-spacegrotesk z-10">
                 {item.category}
               </div>
 
               <div
                 className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-11/12 md:w-10/12
                 max-h-40 bg-primary/100 group-hover:bg-primary/100 
-                text-white p-3 text-center 
+                text-white p-3 text-center font-poppins
                 translate-y-full group-hover:translate-y-0 
                 opacity-0 group-hover:opacity-100
                 transition-all duration-700 ease-out rounded z-20 flex flex-col justify-end"

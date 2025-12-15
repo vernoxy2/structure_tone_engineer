@@ -1,16 +1,13 @@
 import React from "react";
 import svg1 from "../../../assets/HomePageImgs/svg1.svg";
 import svg2 from "../../../assets/HomePageImgs/svg2.svg";
+import Title from "../../../component/Title";
 
 const Location = () => {
   return (
     <section className="w-full h-[400px] md:h-[600px] container px-0 mb-8">
       <div>
-        <h2 className="uppercase flex gap-2 items-center font-bold text-xl justify-center">
-          <img src={svg1} alt="icon" className="items-center" />
-          Location
-          <img src={svg2} alt="icon" className="items-center" />
-        </h2>
+        <Title className={"justify-center"}>Location</Title>
         <h1 className="mt-3 text-center text-2xl md:text-3xl font-semibold">
           Location Guide
         </h1>

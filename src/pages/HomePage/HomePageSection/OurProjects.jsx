@@ -6,7 +6,7 @@ import content1 from "../../../assets/HomePageImgs/Project/content1.webp";
 import content2 from "../../../assets/HomePageImgs/Project/content2.webp";
 import content3 from "../../../assets/HomePageImgs/Project/content3.webp";
 import arrow from "../../../assets/HomePageImgs/Project/arrow.svg";
-import plan from "../../../assets/HomePageImgs/Project/plan.svg";
+import Title from "../../../component/Title";
 
 const OurProjects = () => {
   const projectItems = [
@@ -25,21 +25,17 @@ const OurProjects = () => {
   ];
 
   return (
-    <section className="container">
-      <div className="">
-        <h2 className="uppercase flex gap-2 items-center font-bold text-xl justify-center ">
-          <img src={svg1} alt="icon" className="item-center" />
-          Our Project
-          <img src={svg2} alt="icon" />
-        </h2>
+    <section className="container -mb-36 relative z-10">
+      <div className="mb-8">
+        <Title className="justify-center">Our Projects</Title>
         <h1 className="mt-3">Project Highlights</h1>
       </div>
 
       <div
         style={{ backgroundImage: `url(${ProjectImg})` }}
-        className="bg-cover bg-bottom-left bg-no-repeat mt-12 lg:h-[500px] "
+        className="bg-cover bg-bottom-left bg-no-repeat lg:h-[525px]  "
       >
-        <div className="lg:h-full w-full grid grid-cols-1 md:grid-cols-3 border ">
+        <div className="lg:h-full w-full grid grid-cols-1 md:grid-cols-3  ">
           {projectItems.map((item, index) => (
             <div key={index} className="relative overflow-hidden border group ">
               <img
@@ -54,9 +50,7 @@ const OurProjects = () => {
           ))}
         </div>
       </div>
-      <div className="justify-items-end">
-        <img src={plan} alt="plan" />
-      </div>
+      
     </section>
   );
 };

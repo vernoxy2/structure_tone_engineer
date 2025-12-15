@@ -6,10 +6,10 @@ const GetTouch = ({ className = '', className2 = '' }) => {
     <Link
       to="/contact"
       onClick={() => {}} // fixed: `onClick` instead of `onclick`
-      className={`py-3 px-6 bg-primary item-center text-xl mx-auto md:mx-0 
-        transition-all duration-300 hover:scale-95 hover:shadow-lg active:scale-95 hover:text-white ${className}`}
+      className={`p-1.5 md:py-3 px-3 md:px-6 bg-primary item-center md:text-xl mx-auto md:mx-0 
+        transition-all duration-300 hover:scale-95 hover:shadow-lg active:scale-95 text-white ${className}`}
     >
-      <p className={`font-bold ${className2}`}>
+      <p className={`font-bold  ${className2}`}>
         Get a Touch
       </p>
     </Link>

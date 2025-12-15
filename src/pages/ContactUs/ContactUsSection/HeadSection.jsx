@@ -30,7 +30,7 @@ const HeadSection = ({
         opacity: fade ? opacity : 0.7,
         transition: `opacity ${fadeDuration}ms ease-in-out`,
       }}
-      className="bg-cover bg-center bg-no-repeat mt-28 lg:h-screen max-h-[546px]"
+      className="bg-cover bg-center bg-no-repeat lg:h-screen max-h-[546px]"
     >
       <div className="container grid grid-cols-1 md:grid-cols-2 h-full">
         <div className="space-y-5 xl:w-[80%] py-16 lg:py-0 md:py-24 h-full flex flex-col items-start justify-center">

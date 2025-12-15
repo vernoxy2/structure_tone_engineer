@@ -14,6 +14,7 @@ import img3 from "../../../assets/HomePageImgs/WhatWeDo/img3.svg";
 import img4 from "../../../assets/HomePageImgs/WhatWeDo/img4.svg";
 import img5 from "../../../assets/HomePageImgs/WhatWeDo/img5.svg";
 import BaseLine from "../../../component/BaseLine";
+import Title from "../../../component/Title";
 
 const cardData = [
   {
@@ -64,45 +65,41 @@ const WhatWeDo = () => {
       className="bg-cover bg-no-repeat bg-center"
       style={{ backgroundImage: `url(${WhatWeDoImg})` }}
     >
-      <div className="container grid grid-col-1 lg:grid-cols-3 md:grid-cols-2 gap-10 py-10">
+      <div className="container grid grid-col-1 xl:grid-cols-3 md:grid-cols-2 gap-8 py-10">
         {/* LEFT SECTION */}
-        <div>
-          <h2 className="uppercase flex gap-2 items-center text-xl font-bold">
-            <img src={svg1} alt="icon" />
-            What We Do
-            <img src={svg2} alt="icon" />
-          </h2>
+        <div className="space-y-3 flex flex-col justify-between">
+          <Title>What We Do</Title>
 
-          <h1 className="text-primary text-start text-5xl mt-5">
+          <h1 className="text-primary text-start text-5xl">
             Our Services that we provide
           </h1>
 
-          <p className="mt-3">
+          <p className="">
             Delivering clean, user-focused digital experiences backed by seven
             years’ expertise.
           </p>
 
-          <PrimaryBtn className="mt-7">Know More Services</PrimaryBtn>
+          <PrimaryBtn className="w-fit">Know More Services</PrimaryBtn>
         </div>
 
         {cardData.map((card) => (
-          <div key={card.id} className="p-7 bg-white rounded-lg shadow-md">
+          <div key={card.id} className="p-7 bg-white rounded-lg shadow-md group">
             <div className="flex items-center justify-between ">
               <img
                 src={card.img}
                 alt={card.title}
                 className="w-20 h-20 mb-4 ms-14 "
               />
-              <BaseLine className="bg-[#DEDEDE]" />
+              <BaseLine className="bg-[#DEDEDE] group-hover:bg-primary duration-300 transition-colors " />
             </div>
             <div className="flex flex-row mt-4">
               <img src={card.image} alt={card.title} className="w-12 h-14" />
 
               <div className="ms-3 ">
-                <h3 className="text-2xl font-bold text-primary ">
+                <h3 className="text-2xl font-bold text-primary leading-6">
                   {card.title}
                 </h3>
-                <p className="text-base mt-4 text-[#162C3E] font-normal">
+                <p className="text-base mt-2.5 text-[#162C3E] font-normal tracking-tight">
                   {card.subText}
                 </p>
               </div>
