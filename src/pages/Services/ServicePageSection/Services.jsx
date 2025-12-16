@@ -9,6 +9,8 @@ import Broucher from "../../../assets/ServicePageImgs/Broucher.svg";
 import Doc from "../../../assets/ServicePageImgs/Doc.svg";
 import { GoPlus } from "react-icons/go";
 import Title from "../../../component/Title";
+import { set } from "react-hook-form";
+
 // LEFT SIDE MENU
 const menuList = [
   { id: 1, title: "Structural Design and Analysis" },
@@ -83,43 +85,97 @@ const content = [
 ];
 const Services = () => {
   const [activeTab, setActiveTab] = useState(1);
+  const [expandedMobile, setExpandedMobile] = useState(1);
+
   const selectedContent = content.find((c) => c.id === activeTab);
+
+  const toggleMobile = (id) => {
+    if (expandedMobile === id) {
+      setExpandedMobile(null);
+    } else {
+      setExpandedMobile(id);
+      setActiveTab(id);
+    }
+  };
   return (
-    <section className="container py-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 ">
+    <section className="container ">
+      <Title AOS={"zoom-in"} className="justify-center lg:hidden">
+        Services
+      </Title>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* LEFT COLUMN MENU */}
-        <div data-aos="fade-right" className="space-y-5 bg-white text-white w-full md:space-y-3">
-          {menuList.map((item) => (
-            <div
-            
-              key={item.id}
-              onClick={() => setActiveTab(item.id)}
-              className={`cursor-pointer h-24 flex justify-between items-center transition group xl:text-xl md:text-md text-base font-semibold 
+        <div
+          data-aos="fade-right"
+          className=" w-full md:w-11/12 lg:w-full mx-auto space-y-3"
+        >
+          {menuList.map((item) => {
+            const itemContent = content.find((c) => c.id === item.id);
+            const isExpanded = expandedMobile === item.id;
+            return (
+              <>
+                <div
+                  key={item.id}
+                  onClick={() => {
+                    // Mobile: toggle dropdown
+                    if (window.innerWidth < 1024) {
+                      toggleMobile(item.id);
+                    } else {
+                      // Desktop: just change active tab
+                      setActiveTab(item.id);
+                    }
+                  }}
+                  className={`cursor-pointer h-20 md:h-24 flex justify-between items-center transition group text-base  md:text-xl font-semibold 
                   ${
                     activeTab === item.id
-                      ? "bg-[#162C3E] text-white rounded"
+                      ? "bg-[#162C3E] text-white"
                       : "bg-[#F2F2F2] text-[#162C3E] hover:bg-[#162C3E] hover:text-white"
                   }`}
-            >
-              <div className="items-start group-hover:text-white w-full px-3">
-                {item.title}
-              </div>
+                >
+                  <div className="items-start group-hover:text-white w-full px-3">
+                    {item.title}
+                  </div>
 
-              <div
-                className={`h-full w-24 flex items-center justify-center text-3xl rounded transition 
-                   ${
-                     activeTab === item.id
-                       ? "bg-[#F2C21A] text-white" // Active = yellow
-                       : "bg-[#D4D4D4] text-white group-hover:bg-[#F2C21A]" // Default grey → hover yellow
-                   }
-                     `}
-              >
-                <GoPlus className="text-4xl" />
-              </div>
-            </div>
-          ))}
+                  <div
+                    className={`h-full w-16 md:w-20 lg:w-24 flex items-center justify-center  transition flex-shrink-0
+                    ${
+                      activeTab === item.id
+                        ? "bg-[#F2C21A] text-white"
+                        : "bg-[#D4D4D4] text-white group-hover:bg-[#F2C21A]"
+                    }`}
+                  >
+                    <GoPlus
+                      className={`text-2xl md:text-3xl lg:text-4xl transition-transform duration-300 ${
+                        isExpanded && window.innerWidth < 1024
+                          ? "rotate-45"
+                          : ""
+                      }`}
+                    />
+                  </div>
+                </div>
+                <div
+                  className={`lg:hidden overflow-hidden transition-all duration-300 ${
+                    isExpanded ? "max-h-[800px] mt-2" : "max-h-0"
+                  }`}
+                >
+                  <div className="p-2 shadow-md">
+                    <img
+                      src={itemContent?.image}
+                      alt={item.title}
+                      className=" w-full h-48 md:h-96 object-cover mb-4"
+                    />
+                    <p className="text-[#162C3E] text-sm leading-relaxed">
+                      {itemContent?.subText}
+                    </p>
+                  </div>
+                </div>
+              </>
+            );
+          })}
           {/* Brochure Buttons */}
-          <div data-aos="fade-right" className=" bg-[#162C3E] px-16 py-16 space-y-6">
+          <div
+            data-aos="fade-right"
+            className=" bg-[#162C3E] px-16 py-16 space-y-6"
+          >
             <div className="flex flex-row items-center justify-start gap-4">
               <img src={Svg} alt="Svg" className="items-center" />
               <h3 className="text-white font-bold text-2xl ">Brochures</h3>
@@ -142,7 +198,7 @@ const Services = () => {
         </div>
 
         {/* RIGHT CONTENT AREA */}
-        <div className="xl:col-span-2 space-y-6">
+        <div className=" hidden lg:block xl:col-span-2 space-y-6">
           <Title AOS={"fade-up"}>Services</Title>
 
           <h1 data-aos="fade-up" className="text-primary font-bold text-start ">
@@ -150,12 +206,14 @@ const Services = () => {
           </h1>
           {/* DYNAMIC CONTENT BASED ON ACTIVE TAB */}
           <img
-          data-aos="zoom-in"
+            data-aos="zoom-in"
             src={selectedContent?.image}
             alt="service"
             className="rounded-sm w-full h-auto object-cover"
           />
-          <p data-aos="fade-up" className="text-[#162C3E] ">{selectedContent?.subText}</p>
+          <p data-aos="fade-up" className="text-[#162C3E] ">
+            {selectedContent?.subText}
+          </p>
         </div>
       </div>
     </section>
