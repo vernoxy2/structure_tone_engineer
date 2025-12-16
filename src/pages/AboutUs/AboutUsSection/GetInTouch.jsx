@@ -33,8 +33,8 @@ const GetInTouch = () => {
         minHeight = 350;
         maxHeight = 500;
       } else if (window.innerWidth < 1024) {
-        minHeight = 350;
-        maxHeight = 500;
+        minHeight = 400;
+        maxHeight = 550;
       }
 
       // Animate only after first scroll
@@ -48,7 +48,7 @@ const GetInTouch = () => {
       }
     };
 
-    // window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
