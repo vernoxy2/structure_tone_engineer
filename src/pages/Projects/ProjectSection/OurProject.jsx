@@ -246,7 +246,7 @@ const OurProject = () => {
 
         <div
           ref={tabsRef}
-          className="flex flex-wrap justify-center gap-3 md:gap-8 mt-12 mb-8 rounded-sm text-2xl font-bold font-spacegrotesk"
+          className="flex flex-wrap justify-center gap-2 md:gap-4 lg:gap-8 mt-12 mb-8 rounded-sm text-base md:text-lg lg:text-2xl font-bold font-spacegrotesk"
         >
           {["All","Commercial Project","Residential Project","Industrial Project"].map((tab) => (
             <button

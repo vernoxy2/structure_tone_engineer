@@ -7,7 +7,7 @@ const Project = () => {
   const slides = [
     {
       BgImg: HeadImg,
-      MainText: "Services",
+      MainText: "Projects",
       SubText: (
         <>
          We design and deliver high-quality engineering projects with precision, durability, and client focused solutions.

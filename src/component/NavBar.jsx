@@ -8,10 +8,10 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuItems = [
     { name: "Home", path: "/" },
-    { name: "Aboutus", path: "/aboutus" },
+    { name: "About Us", path: "/aboutus" },
     { name: "Project", path: "/project" },
     { name: "Services", path: "/services" },
-    { name: "Contact", path: "/contact" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (

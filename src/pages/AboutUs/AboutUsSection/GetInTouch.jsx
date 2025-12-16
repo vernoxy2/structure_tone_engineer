@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import svg1 from "../../../assets/HomePageImgs/svg1.svg";
-import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 import PrimaryBtn from "../../../component/PrimaryBtn";
 import Frame from "../../../assets/AboutUsPageImgs/GetInTouch/Frame.png";
+import Title from "../../../component/Title";
 
 const GetInTouch = () => {
   const wrapRef = useRef(null);
@@ -34,8 +33,8 @@ const GetInTouch = () => {
         minHeight = 350;
         maxHeight = 500;
       } else if (window.innerWidth < 1024) {
-        minHeight = 400;
-        maxHeight = 550;
+        minHeight = 350;
+        maxHeight = 500;
       }
 
       // Animate only after first scroll
@@ -49,7 +48,7 @@ const GetInTouch = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -61,7 +60,7 @@ const GetInTouch = () => {
       ? "translateY(-40px)"
       : "translateY(40px)",
     opacity: visible ? 1 : 0,
-    transition: "transform 1500ms ease-out, opacity 1500ms ease-out",
+    transition: "transform 150ms ease-out, opacity 150ms ease-out",
     willChange: "transform, opacity",
   };
 
@@ -78,24 +77,20 @@ const GetInTouch = () => {
   };
 
   return (
-    <section className="py-10 relative max-h:100%">
+    <section className="py-10 relative max-h:100% container">
       <div style={bgAnimatedStyle}>
         <div
           ref={wrapRef}
-          className="container text-center space-y-8 grid grid-cols-1 xl:w-1/3"
+          className="container text-center space-y-8 grid grid-cols-1 xl:w-2/3"
           style={animatedStyle}
         >
-          <h2 className="uppercase flex gap-2 items-center justify-center font-bold text-xl">
-            <img src={svg1} alt="icon" className="h-6 w-6" />
-            GET IN TOUCH
-            <img src={svg2} alt="icon" className="h-6 w-6" />
-          </h2>
+          <Title AOS={"zoom-in"} className={"justify-center"}>GET IN TOUCH</Title>
 
           <h1 className="text-5xl md:text-4xl font-bold text-primary font-spacegrotesk">
-            Let's Build Something Great Together
+            Let's Build Something <br className="hidden xl:block" /> Great Together
           </h1>
 
-          <p className="font-poppins">
+          <p className="font-poppins xl:w-3/4 mx-auto">
             Let’s build something truly remarkable together. Share your ideas,
             and our team will help turn them into reality with the right strategy,
             design, and support.

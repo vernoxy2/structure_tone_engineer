@@ -50,9 +50,13 @@ const Structure = () => {
       >
         <img src={plan} alt="plan" className="h-32" />
       </div>
-      <h1 className="text-center text-[#D9D9D9] text-4xl md:text-5xl lg:text-6xl translate-y-14 md:translate-y-16 relative z-0 ">
+      <h1 data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="500" className="text-center text-[#D9D9D9] text-4xl md:text-5xl lg:text-6xl translate-y-14 md:translate-y-20 top-16 relative z-0 ">
         Stand Behind Our <br /> Structures
       </h1>
+       {/* <h1 className="animate-typing text-center text-[#D9D9D9] text-4xl md:text-5xl lg:text-6xl translate-y-14 md:translate-y-16 relative z-0 ">
+          Hello World
+        </h1> */}
+        {/* <TypingAnimation>Hello World! 👋</TypingAnimation> */}
 
       {/* FIXED RESPONSIVE LAYOUT */}
       <div className="flex flex-col lg:flex-row container mx-auto justify-between items-center px-4 sm:px-6 lg:px-8">
@@ -84,7 +88,7 @@ const Structure = () => {
         </div>
 
         {/* CENTER IMAGE */}
-        <div data-aos="zoom-in" data-aos-duration="2000" data-aos-delay="500" className="w-full sm:w-auto lg:w-2/12 flex justify-center order-1 lg:order-2 mb-6 sm:mb-8 lg:mb-0 px-4">
+        <div data-aos="zoom-out" data-aos-duration="500" data-aos-delay="500" className="w-full sm:w-auto lg:w-2/12 flex justify-center order-1 lg:order-2 mb-6 sm:mb-8 lg:mb-0 px-4">
           <img
             src={StructureImg}
             alt="Structure"
