@@ -29,7 +29,7 @@ const ContactUs = () => {
         },
         {
           BgImg: Head3,
-          MainText: "Contact us.",
+          MainText: "Contact us",
           SubText: (
             <>
              We’d love to hear from you! Whether you have questions, ideas, or feedback, our team is here to help.
