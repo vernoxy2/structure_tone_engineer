@@ -65,7 +65,7 @@ const Footer = () => {
   return (
     <section
       style={{ backgroundImage: `url(${footerBgImg})` }}
-      className="bg-black text-white py-10 pb-10 relative bg-cover bg-no-repeat bg-center overflow-hidden"
+      className="bg-black text-white py-10 pb-6 relative bg-cover bg-no-repeat bg-center overflow-hidden space-y-4"
     >
       <div className="container w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* First Column */}
@@ -176,6 +176,12 @@ const Footer = () => {
         </div>
 
         <div className="bg-gradient-to-r from-white/20 via-white to-white/20 h-[1px] mb-2 mt-5 mx-auto max-w-2xl" />
+      </div>
+      <div>
+        <hr className="border-primary" />
+      <p className="text-center pt-4 sm:pt-5 md:pt-6 text-white/60  mt-auto">
+            © {new Date().getFullYear()} Developed by @Vernoxy
+          </p>
       </div>
     </section>
   );
