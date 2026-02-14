@@ -3,6 +3,7 @@ import React from "react";
 import Founder1 from "../../../assets/AboutUsPageImgs/Founder/Founder1.png";
 import BgImg from "../../../assets/AboutUsPageImgs/Founder/BgImg.png"; // <-- your background image
 import Title from "../../../component/Title";
+import LazyImage from "../../../component/LazyImage";
 
 const Founder = () => {
   return (
@@ -44,7 +45,7 @@ const Founder = () => {
         </div>
         {/* col2 */}
         <div className="relative order-1 lg:order-2 flex justify-center">
-          <img data-aos="zoom-in" src={Founder1} alt="Founder1" className="" />
+          <LazyImage data-aos="zoom-in" src={Founder1} alt="Founder1" className="" />
           <div data-aos="fade-right" data-aos-delay="300" className="absolute top-5 left-[-10px] bg-primary bg-opacity-80 px-2 py-1 rounded font-semibold">
             <h1 className="text-white">Prithvi Lilawala</h1>
           </div>

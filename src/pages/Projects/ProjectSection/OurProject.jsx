@@ -159,6 +159,7 @@ import IndProj from "../../../assets/ProjectPageImgs/IndProj.webp";
 import svg1 from "../../../assets/HomePageImgs/svg1.svg";
 import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 import Title from "../../../component/Title";
+import LazyImage from "../../../component/LazyImage";
 
 const OurProject = () => {
   const location = useLocation();
@@ -267,7 +268,7 @@ const OurProject = () => {
         <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredImages.map((item) => (
             <div data-aos="zoom-in" key={item.id} className="relative group overflow-hidden rounded-sm bg-none">
-              <img
+              <LazyImage
                 src={item.img}
                 alt={item.category}
                 className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"

@@ -6,6 +6,7 @@ import Image2 from "../../../assets/HomePageImgs/Image2.svg";
 import Image3 from "../../../assets/HomePageImgs/Image3.svg";
 import Image4 from "../../../assets/HomePageImgs/Image4.svg";
 import plan from "../../../assets/HomePageImgs/Project/plan.svg";
+import LazyImage from "../../../component/LazyImage";
 
 const DataCard1 = [
   {
@@ -48,7 +49,7 @@ const Structure = () => {
         data-aos-duration="2500"
         className="justify-items-end absolute right-0 top-24 md:top-20  z-10 hidden md:block"
       >
-        <img src={plan} alt="plan" className="h-32" />
+        <LazyImage src={plan} alt="plan" className="h-32" />
       </div>
       <h1 data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="500" className="text-center text-[#D9D9D9] text-4xl md:text-5xl lg:text-6xl translate-y-14 md:translate-y-20 top-16 relative z-0 ">
         Stand Behind Our <br /> Structures
@@ -68,7 +69,7 @@ const Structure = () => {
               className="p-4 sm:p-5 rounded-xl flex flex-row lg:flex-row-reverse items-center gap-3 sm:gap-4 lg:justify-end xl:w-[85%] 2xl:w-[80%] lg:ml-auto"
             >
               {/* IMAGE */}
-              <img
+              <LazyImage
                 src={item.img}
                 alt={item.title}
                 className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 object-contain"
@@ -89,7 +90,7 @@ const Structure = () => {
 
         {/* CENTER IMAGE */}
         <div data-aos="zoom-out" data-aos-duration="500" data-aos-delay="500" className="w-full sm:w-auto lg:w-2/12 flex justify-center order-1 lg:order-2 mb-6 sm:mb-8 lg:mb-0 px-4">
-          <img
+          <LazyImage
             src={StructureImg}
             alt="Structure"
             className="h-64 sm:h-80 md:h-96 lg:h-auto max-w-full object-contain relative z-10"
@@ -104,7 +105,7 @@ const Structure = () => {
               className="p-4 sm:p-5 rounded-xl flex items-center gap-3 sm:gap-4 xl:w-[85%] 2xl:w-[80%] lg:mr-auto"
             >
               {/* IMAGE */}
-              <img
+              <LazyImage
                 src={item.img}
                 alt={item.title}
                 className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex-shrink-0 object-contain"

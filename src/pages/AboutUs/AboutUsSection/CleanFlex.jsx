@@ -2,6 +2,7 @@ import React from "react";
 
 import image from "../../../assets/AboutUsPageImgs/AboutUsImg.webp";
 import Title from "../../../component/Title";
+import LazyImage from "../../../component/LazyImage";
 
 const CleanFlex = () => {
   return (
@@ -9,7 +10,7 @@ const CleanFlex = () => {
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* col1 */}
         <div data-aos="fade-right" className="relative flex justify-start py-5 items-center ">
-          <img src={image} alt="aboutUs" className="w-full h-auto" />
+          <LazyImage src={image} alt="aboutUs" className="w-full h-auto" />
         </div>
         {/* col2 */}
         <div className="space-y-8 md:w-12/12 xl:w-6/6 ml-auto text-start justify-between">
