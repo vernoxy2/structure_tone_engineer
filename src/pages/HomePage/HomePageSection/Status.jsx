@@ -9,6 +9,7 @@ import Frame3 from "../../../assets/HomePageImgs/Frame3.svg";
 import Frame4 from "../../../assets/HomePageImgs/Frame4.svg";
 import BaseLine from "../../../component/BaseLine";
 import Title from "../../../component/Title";
+import LazyImage from "../../../component/LazyImage";
 
 const Count = [
   { id: 1, count: 10, suffix: "+", text: "Years Experience", icon: Frame1 },
@@ -96,7 +97,7 @@ const Status = () => {
             <div data-aos="fade-up" key={item.id} className="text-white space-y-1 flex flex-col">
               <div className="flex items-center justify-between w-[85%] ">
                 <BaseLine className="bg-primary"/>
-                <img src={item.icon} alt="icon" className=" scale-110 md:scale-100" />
+                <LazyImage src={item.icon} alt="icon" className=" scale-110 md:scale-100" />
               </div>
               <h2 className="text-8xl md:text-6xl xl:text-8xl font-semibold flex items-center gap-1">
                 <div

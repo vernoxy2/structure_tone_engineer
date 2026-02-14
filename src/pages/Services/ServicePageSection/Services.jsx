@@ -10,6 +10,7 @@ import Doc from "../../../assets/ServicePageImgs/Doc.svg";
 import { GoPlus } from "react-icons/go";
 import Title from "../../../component/Title";
 import { set } from "react-hook-form";
+import LazyImage from "../../../component/LazyImage";
 
 // LEFT SIDE MENU
 const menuList = [
@@ -177,20 +178,20 @@ const Services = () => {
             className=" bg-[#162C3E] px-16 py-16 space-y-6"
           >
             <div className="flex flex-row items-center justify-start gap-4">
-              <img src={Svg} alt="Svg" className="items-center" />
+              <LazyImage src={Svg} alt="Svg" className="items-center" />
               <h3 className="text-white font-bold text-2xl ">Brochures</h3>
             </div>
 
             <div className="flex flex-col gap-4">
               {/* Brochure Button */}
               <button className="flex items-center justify-center gap-3 w-full bg-primary font-semibold p-3 rounded text-xl text-white">
-                <img src={Broucher} alt="Brochure" className="text-4xl" />
+                <LazyImage src={Broucher} alt="Brochure" className="text-4xl" />
                 Brochure
               </button>
 
               {/* Document Button */}
               <button className="flex items-center justify-center gap-3 w-full bg-primary text-white font-semibold p-3 text-xl rounded">
-                <img src={Doc} alt="Document" className="text-4xl" />
+                <LazyImage src={Doc} alt="Document" className="text-4xl" />
                 Document
               </button>
             </div>

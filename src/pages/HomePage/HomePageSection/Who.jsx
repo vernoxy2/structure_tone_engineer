@@ -6,6 +6,7 @@ import aboutUsOver from "../../../assets/HomePageImgs/aboutUsOver.png";
 import BaseLine from "../../../component/BaseLine";
 import PrimaryBtn from "../../../component/PrimaryBtn";
 import Title from "../../../component/Title";
+import LazyImage from "../../../component/LazyImage";
 
 const Counter = ({ target, duration = 2000 }) => {
   const [count, setCount] = React.useState(0);
@@ -35,11 +36,11 @@ const Who = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8  ">
         {/* clo-1 */}
         <div data-aos="zoom" className="flex flex-col justify-center relative">
-          <img src={aboutUs} alt="aboutUs" />
+          <LazyImage src={aboutUs} alt="aboutUs" />
           <div data-aos="zoom-in" data-aos-delay="300" className="absolute -top-1 right-20 h-44 lg:h-auto">
-            <img src={aboutUsOver} alt="aboutUs" />
+            <LazyImage src={aboutUsOver} alt="aboutUs" />
             <div className="flex flex-col items-center justify-end py-10 absolute inset-0 space-y-1">
-              <img src={aboutUsSvg} alt="" />
+              <LazyImage src={aboutUsSvg} alt="" />
               <h1 className="text-[#162C3E] pt-2">
                 <Counter target={1500} />
               </h1>

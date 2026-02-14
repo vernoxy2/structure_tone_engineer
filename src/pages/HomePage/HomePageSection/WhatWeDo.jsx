@@ -15,6 +15,7 @@ import img4 from "../../../assets/HomePageImgs/WhatWeDo/img4.svg";
 import img5 from "../../../assets/HomePageImgs/WhatWeDo/img5.svg";
 import BaseLine from "../../../component/BaseLine";
 import Title from "../../../component/Title";
+import LazyImage from "../../../component/LazyImage";
 
 const cardData = [
   {
@@ -85,7 +86,7 @@ const WhatWeDo = () => {
         {cardData.map((card) => (
           <div data-aos="flip-up" key={card.id} className="p-7 bg-white rounded-lg shadow-md group">
             <div className="flex items-center justify-between ">
-              <img
+              <LazyImage
                 src={card.img}
                 alt={card.title}
                 className="w-20 h-20 mb-4 ms-14 "

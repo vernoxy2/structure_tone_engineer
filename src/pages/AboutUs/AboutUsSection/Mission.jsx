@@ -4,6 +4,7 @@ import coreValues from "../../../assets/AboutUsPageImgs/Mission/coreValues.svg";
 import sharedVision from "../../../assets/AboutUsPageImgs/Mission/sharedVision.svg";
 import targeting from "../../../assets/AboutUsPageImgs/Mission/targeting.svg";
 import BaseLine1 from "../../../component/BaseLine1";
+import LazyImage from "../../../component/LazyImage";
 
 const Mission = () => {
   const dataList1 = [
@@ -113,7 +114,7 @@ const Mission = () => {
                 className="bg-white p-8 relative space-y-5 shadow-md"
               >
                 <div className="flex items-center gap-5">
-                  <img src={item.image} alt="img" className="lg:w-20 md:w-14" />
+                  <LazyImage src={item.image} alt="img" className="lg:w-20 md:w-14" />
                   <h2 className="xl:text-5xl md:text-2xl text-2xl font-bold text-primary">
                     {item.MainText}
                   </h2>
@@ -139,7 +140,7 @@ const Mission = () => {
                 className="bg-white p-8 space-y-5 relative  "
               >
                 <div className="flex items-center gap-5">
-                  <img src={item.image} alt="img" className="lg:w-20 md:w-14" />
+                  <LazyImage src={item.image} alt="img" className="lg:w-20 md:w-14" />
                   <h2 className="xl:text-5xl md:text-2xl text-2xl font-bold text-primary">
                     {item.MainText}
                   </h2>
@@ -171,7 +172,7 @@ const Mission = () => {
               className="bg-white w-full mx-auto mt-8 relative p-6 shadow-md space-y-5"
             >
               <div className="flex items-center gap-5">
-                <img src={item.image} alt="img" className="xl:w-20 md:w-14" />
+                <LazyImage src={item.image} alt="img" className="xl:w-20 md:w-14" />
                 <h2 className="xl:text-5xl md:text-2xl text-2xl font-bold text-primary">
                   {item.MainText}
                 </h2>

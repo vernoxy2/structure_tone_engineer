@@ -1,12 +1,11 @@
 import React from "react";
-import svg1 from "../../../assets/HomePageImgs/svg1.svg";
-import svg2 from "../../../assets/HomePageImgs/svg2.svg";
 import ProjectImg from "../../../assets/HomePageImgs/Project/backimg.png";
 import content1 from "../../../assets/HomePageImgs/Project/content1.webp";
 import content2 from "../../../assets/HomePageImgs/Project/content2.webp";
 import content3 from "../../../assets/HomePageImgs/Project/content3.webp";
 import arrow from "../../../assets/HomePageImgs/Project/arrow.svg";
 import Title from "../../../component/Title";
+import LazyImage from "../../../component/LazyImage";
 
 const OurProjects = () => {
   const projectItems = [
@@ -39,7 +38,7 @@ const OurProjects = () => {
         <div className="lg:h-full w-full grid grid-cols-1 md:grid-cols-3  ">
           {projectItems.map((item, index) => (
             <div key={index} className="relative overflow-hidden border group ">
-              <img
+              <LazyImage
                 src={item.img}
                 alt={item.title}
                 className="w-full h-full object-cover opacity-0 group-hover:opacity-100 duration-300 transition-opacity"
